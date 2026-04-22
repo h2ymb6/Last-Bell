@@ -11,10 +11,12 @@ export const Header = ({ title }: HeaderProps) => {
     <>
       <Wrapper>
         <Title>{title}</Title>
+
         <Right>
           <Bell>
             <FaBell />
           </Bell>
+
           <ProfileWrapper>
             <ProfileImg></ProfileImg>
             <ProfileName>이태연</ProfileName>
@@ -27,9 +29,12 @@ export const Header = ({ title }: HeaderProps) => {
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  color: ${Colors.Black};
   padding: 20px;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  height: 50px;
 `;
 
 const Right = styled.div`
@@ -64,5 +69,3 @@ const ProfileImg = styled.div`
 const ProfileName = styled.div`
   font-size: 16px;
 `;
-// n>0
-// n%2
