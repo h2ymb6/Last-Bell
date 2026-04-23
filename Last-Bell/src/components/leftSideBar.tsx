@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Colors } from "../styles/color";
+import { BellImg } from "../assets/Bell";
 
 export const LeftSideBar = () => {
   return (
     <Wrapper>
-      <Title>Last-Bell</Title>
+      <Title>
+        <BellImg />
+        Last-Bell
+      </Title>
 
       <ListWrapper>
         <List_Main>대시보드</List_Main>
@@ -20,7 +24,7 @@ export const LeftSideBar = () => {
 
 const Wrapper = styled.div`
   background-color: ${Colors.Blue300};
-  width: 250px;
+  width: 300px;
   padding: 30px;
   height: 100vh;
   overflow: hidden;
@@ -33,6 +37,8 @@ const Title = styled.div`
   font-size: 30px;
   font-weight: 800;
   color: ${Colors.Blue900};
+  align-items: center;
+  margin-right: 20px;
 `;
 
 const ListWrapper = styled.div`
