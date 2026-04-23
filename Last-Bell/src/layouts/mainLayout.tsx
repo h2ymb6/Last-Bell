@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { Header } from "../components/header";
 import { LeftSideBar } from "../components/leftSideBar";
 import styled from "styled-components";
+import { Colors } from "../styles/color";
 
 interface MainLayOutProps {
   children: ReactNode;
@@ -27,4 +28,5 @@ const Wrapper = styled.div`
 
 const Right = styled.div`
   width: 100%;
+  background-color: ${Colors.Blue100};
 `;

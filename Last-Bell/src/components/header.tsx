@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex: 1;
   height: 50px;
-  background-color: ${Colors.Blue100};
+  background-color: ${Colors.Blue200};
 `;
 
 const Right = styled.div`
