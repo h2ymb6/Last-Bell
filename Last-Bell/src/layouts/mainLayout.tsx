@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
-import { Header } from "../components/header";
-import { LeftSideBar } from "../components/leftSideBar";
+import { Header } from "../components/layout/header";
+import { LeftSideBar } from "../components/layout/leftSideBar";
 import styled from "styled-components";
 import { Colors } from "../styles/color";
 
