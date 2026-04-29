@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "../styles/color";
+import { Colors } from "../../styles/color";
 import { FaBell } from "react-icons/fa";
 
 interface HeaderProps {
