@@ -1,7 +1,6 @@
-//클로드 코드
 const TimeUntilExam = () => {
-  const startDate = "2026-04-21";
-  const endDate = "2026-04-22";
+  const startDate = "2026-06-29";
+  const endDate = "2026-07-01";
 
   const parseLocalDate = (dateStr: string): Date => {
     const [year, month, day] = dateStr.split("-").map(Number);
