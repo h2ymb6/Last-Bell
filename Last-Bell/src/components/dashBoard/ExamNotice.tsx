@@ -6,7 +6,7 @@ const ExamNotice = () => {
   return (
     <Wrapper>
       <Top>
-        시험까지 남은 시간: <Time>{TimeUntilExam()}</Time>
+        시험까지 남은 시간간: <Time>{TimeUntilExam()}</Time>
       </Top>
       <Main>
         끝까지 포기하지마! <br /> 오늘도 힘내자!
