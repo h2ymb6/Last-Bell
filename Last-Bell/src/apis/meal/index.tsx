@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getSchoolMeal = async (mealDate: string) => {
   const API_KEY = import.meta.env.SCHOOL_MEAL_KEY;
-  const URL = "https://open.neis.go.kr/hub/mealServiceDietInfo";
+  const URL = import.meta.env.SCHOOL_MEAL_URL;
 
   try {
     const response = await axios.get(URL, {
