@@ -1,6 +1,7 @@
 import { MainLayOut } from "../layouts/mainLayout";
 import ExamNotice from "../components/dashBoard/ExamNotice";
 import ExamTimeLine from "../components/examAnd/examTimeLine/index";
+import TaskAssessment from "../components/examAnd/TaskAssessment/taskAssessment";
 
 const ExamAnd = () => {
   return (
@@ -13,6 +14,8 @@ const ExamAnd = () => {
           <ExamTimeLine />
         </div>
       </div>
+
+      <TaskAssessment />
     </MainLayOut>
   );
 };
