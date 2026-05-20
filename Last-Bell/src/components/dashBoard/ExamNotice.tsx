@@ -23,6 +23,7 @@ const Wrapper = styled.div`
     ${Colors.Blue300} 40%,
     ${Colors.Yellow200} 100%
   );
+  box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
   width: 800px;
   height: 230px;
   border-radius: 20px;

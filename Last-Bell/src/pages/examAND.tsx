@@ -1,6 +1,6 @@
 import { MainLayOut } from "../layouts/mainLayout";
 import ExamNotice from "../components/dashBoard/ExamNotice";
-import ExamTimeLine from "../components/examAnd/ExamTimeline";
+import ExamTimeLine from "../components/examAnd/examTimeLine/index";
 
 const ExamAnd = () => {
   return (
