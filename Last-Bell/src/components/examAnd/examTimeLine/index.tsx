@@ -24,7 +24,8 @@ export default ExamTimeLine;
 const Wrapper = styled.div`
   background-color: White;
   width: 400px;
-  height: 230px;
+  height: 250px;
+  margin-top: 20px;
   gap: 10px;
   border-radius: 14px;
   display: flex;
@@ -45,5 +46,4 @@ const BottomWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  
 `;

@@ -15,7 +15,7 @@ const Each = ({ title, date }) => {
 export default Each;
 
 const Title = styled.div`
-  font-size: 25px;
+  font-size: 20px;
 `;
 
 const ExamDate = styled.div`

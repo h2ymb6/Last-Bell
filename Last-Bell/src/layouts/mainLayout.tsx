@@ -6,15 +6,16 @@ import { Colors } from "../styles/color";
 
 interface MainLayOutProps {
   children: ReactNode;
+  title: string;
 }
 
-export const MainLayOut = ({ children }: MainLayOutProps) => {
+export const MainLayOut = ({ children, title }: MainLayOutProps) => {
   return (
     <>
       <Wrapper>
         <LeftSideBar />
         <Right>
-          <Header title="대시보드" />
+          <Header title={title} />
           {children}
         </Right>
       </Wrapper>

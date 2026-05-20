@@ -24,9 +24,10 @@ const Wrapper = styled.div`
     ${Colors.Yellow200} 100%
   );
   box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
-  width: 800px;
-  height: 230px;
+  width: 900px;
+  height: 250px;
   border-radius: 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
