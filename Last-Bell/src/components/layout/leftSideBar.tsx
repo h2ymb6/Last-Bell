@@ -55,6 +55,10 @@ const List = styled.div`
   padding: 18px 20px;
   font-size: 20px;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${Colors.Blue100};
+  }
 `;
 
 const List_Main = styled.div`
