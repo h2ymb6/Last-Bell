@@ -1,10 +1,11 @@
 import DashBoard from "./pages/dashboard";
-import ExamAnd from "./pages/examAND";
+import ExamAnd from "./pages/ExamAnd";
 import SchoolSchedule from "./pages/schoolSchedule";
 import FloorMap from "./pages/FloorMap";
 import TimeTableAndMeal from "./pages/TimeTableAndMeal";
 import Setting from "./pages/setting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TodaySchoolMeal from "./components/meal/index";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             element={<TimeTableAndMeal />}
           ></Route>
           <Route path="/Setting" element={<Setting />}></Route>
+          <Route path="/meal" element={<TodaySchoolMeal />}></Route>
         </Routes>
       </BrowserRouter>
     </>
