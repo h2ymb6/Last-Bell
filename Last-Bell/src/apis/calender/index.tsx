@@ -8,17 +8,18 @@ const API = axios.create({
   },
 });
 
-const MealApi = async (date) => {
+const ScheduleApi = async (fromData, toData) => {
   try {
-    const response = await API.get("/mealServiceDietInfo", {
+    const response = await API.get("/SchoolSchedule", {
       params: {
         KEY: key,
         Type: "json",
         pIndex: 1,
-        pSize: 5,
+        pSize: 100,
         ATPT_OFCDC_SC_CODE: "G10",
         SD_SCHUL_CODE: 7430310,
-        MLSV_YMD: date,
+        AA_FROM_YMD: fromData, // 조회 시작일
+        AA_TO_YMD: toData, // 조회 종료일
       },
     });
     return response;
@@ -28,4 +29,4 @@ const MealApi = async (date) => {
   }
 };
 
-export default MealApi;
+export default ScheduleApi;

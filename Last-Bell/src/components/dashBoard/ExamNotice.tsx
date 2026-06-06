@@ -1,6 +1,7 @@
 import { Colors } from "../../styles/color";
 import TimeUntilExam from "../../utils/timeUntilExamCal";
 import styled from "styled-components";
+import img from "../../assets/cat.png";
 
 const ExamNotice = () => {
   return (
@@ -10,12 +11,20 @@ const ExamNotice = () => {
       </Top>
       <Main>
         끝까지 포기하지마! <br /> 오늘도 힘내자!
+        <Img src={img} alt="" />
       </Main>
     </Wrapper>
   );
 };
 
 export default ExamNotice;
+
+const Img = styled.img`
+  width: 300px;
+  right: 50px;
+  margin-top: -50px;
+  position: absolute;
+`;
 
 const Wrapper = styled.div`
   background: linear-gradient(
@@ -52,4 +61,8 @@ const Time = styled.div`
 const Main = styled.div`
   font-size: 40px;
   font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 `;

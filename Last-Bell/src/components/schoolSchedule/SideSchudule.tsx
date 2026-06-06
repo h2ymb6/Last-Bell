@@ -1,0 +1,90 @@
+import styled from "styled-components";
+import { format } from "date-fns";
+import { Colors } from "../../styles/color";
+
+interface ScheduleItem {
+  EVENT_NM: string;
+  AA_YMD: string;
+}
+
+interface ScheduleListSectionProps {
+  selectedDate: Date;
+  selectedSchedules: ScheduleItem[];
+}
+
+function ScheduleListSection({
+  selectedDate,
+  selectedSchedules,
+}: ScheduleListSectionProps) {
+  return (
+    <SideScheduleWrapper>
+      <SideHeader>
+        <SideTitle>{format(selectedDate, "M월 d일")} 학사 일정</SideTitle>
+      </SideHeader>
+      <ScheduleList>
+        {selectedSchedules.length > 0 ? (
+          selectedSchedules.map((item, i) => (
+            <ScheduleRow key={i}>
+              <EventText>{item.EVENT_NM}</EventText>
+            </ScheduleRow>
+          ))
+        ) : (
+          <NoData>예정된 학사 일정이 없습니다. 🏝️</NoData>
+        )}
+      </ScheduleList>
+    </SideScheduleWrapper>
+  );
+}
+
+export default ScheduleListSection;
+
+const SideScheduleWrapper = styled.div`
+  flex: 0.8;
+  background-color: white;
+  padding: 24px;
+  border: 1px solid ${Colors.Blue300};
+  box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
+  border-radius: 20px;
+  align-self: flex-start;
+  min-height: 300px;
+`;
+
+const SideHeader = styled.div`
+  border-bottom: 2px solid ${Colors.Blue200};
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+`;
+
+const SideTitle = styled.h2`
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+`;
+
+const ScheduleList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+const ScheduleRow = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: ${Colors.Blue200};
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const EventText = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const NoData = styled.div`
+  font-size: 15px;
+  color: #777;
+  padding: 20px 0;
+  text-align: center;
+`;

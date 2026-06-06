@@ -1,8 +1,35 @@
 import styled from "styled-components";
 import { Colors } from "../../styles/color";
 import { BellImg } from "../../assets/Bell";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 export const LeftSideBar = () => {
+  const navigate = useNavigate();
+
+  const moveToDashBoard = () => {
+    navigate("/");
+  };
+
+  const moveToExamAnd = () => {
+    navigate("/ExamAnd");
+  };
+
+  const moveToFloorMap = () => {
+    navigate("/FloorMap");
+  };
+
+  const moveToSchoolSchedule = () => {
+    navigate("/SchoolSchedule");
+  };
+  const moveToSetting = () => {
+    navigate("/Setting");
+  };
+
+  const moveToTimeTableAndMeal = () => {
+    navigate("/TimeTableAndMeal");
+  };
+
   return (
     <Wrapper>
       <Title>
@@ -11,12 +38,12 @@ export const LeftSideBar = () => {
       </Title>
 
       <ListWrapper>
-        <List_Main>대시보드</List_Main>
-        <List>시험&수행평가</List>
-        <List>학사 일정</List>
-        <List>층별 지도</List>
-        <List>시간표&급식</List>
-        <List>설정</List>
+        <List onClick={moveToDashBoard}>대시보드</List>
+        <List onClick={moveToExamAnd}>시험&수행평가</List>
+        <List onClick={moveToSchoolSchedule}>학사 일정</List>
+        <List onClick={moveToFloorMap}>층별 지도</List>
+        <List onClick={moveToTimeTableAndMeal}>시간표&급식</List>
+        <List onClick={moveToSetting}>설정</List>
       </ListWrapper>
     </Wrapper>
   );
