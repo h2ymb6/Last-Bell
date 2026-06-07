@@ -12,36 +12,7 @@ export const FloorMap = () => {
       <MainContainer>
         <SearchSection />
 
-        <Floor title="ㅇㅇㅇ" description="설명" buttonText="버튼" />
-        <SearchSectionCard>
-          <Title>선생님을 찾아보세요</Title>
-          <Description>
-            선생님 이름이나 담당 과목을 입력하여 위치와 연락처를 확인할 수
-            있습니다.
-          </Description>
-
-          <SearchBarWrap>
-            <i className="fa-solid fa-magnifying-glass search-icon" />
-            <SearchInput
-              type="text"
-              placeholder="선생님 이름 또는 과목 입력..."
-              value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
-            />
-          </SearchBarWrap>
-
-          <SearchPlaceholder>
-            <i
-              className="fa-solid fa-magnifying-glass"
-              style={{ fontSize: "48px" }}
-            />
-            <p>위의 검색창에 선생님 이름을 입력해주세요.</p>
-          </SearchPlaceholder>
-        </SearchSectionCard>
-
-        <FloorPlaceHolder>
-          <p>지도 영역 (Floor Component)</p>
-        </FloorPlaceHolder>
+        <Floor title="ㅇㅇㅇ" description="설명" icon="d" />
       </MainContainer>
     </MainLayOut>
   );

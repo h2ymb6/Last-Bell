@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// 전반적인 푸른빛 배경을 가지는 메인 컨테이너
 export const Container = styled.div`
   width: 100%;
   max-width: 1060px;
@@ -16,7 +15,6 @@ export const Container = styled.div`
     sans-serif;
 `;
 
-/* --- 상단 검색 섹션 스타일 --- */
 export const SearchSectionCard = styled.section`
   background-color: #ffffff;
   border-radius: 16px;
@@ -87,7 +85,6 @@ export const SearchPlaceholder = styled.div`
   }
 `;
 
-/* --- 하단 3열 그리드 섹션 스타일 --- */
 export const CardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -104,6 +101,7 @@ export const CardContainer = styled.article`
   padding: 28px 24px;
   box-shadow: 0 4px 16px rgba(140, 170, 210, 0.15);
   display: flex;
+  width: 200px;
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -133,7 +131,7 @@ export const CardDescription = styled.p`
   color: #627289;
   line-height: 1.5;
   margin: 0 0 24px 0;
-  min-height: 39px; /* 텍스트 줄바꿈 대응 */
+  min-height: 39px; 
 `;
 
 export const CardButton = styled.button`
@@ -146,7 +144,7 @@ export const CardButton = styled.button`
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: auto; /* 하단 밀어내기 정렬 */
+  margin-top: auto; 
   transition: all 0.2s ease;
 
   &:hover {

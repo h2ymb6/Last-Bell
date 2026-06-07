@@ -1,7 +1,7 @@
 import DashBoard from "./pages/dashboard";
 import ExamAnd from "./pages/ExamAnd";
 import SchoolSchedule from "./pages/schoolSchedule";
-import FloorMap from "./pages/FloorMap";
+import { FloorMap } from "./pages/FloorMap";
 import TimeTableAndMeal from "./pages/TimeTableAndMeal";
 import Setting from "./pages/setting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
