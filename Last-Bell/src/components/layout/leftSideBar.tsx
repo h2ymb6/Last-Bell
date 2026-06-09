@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Colors } from "../../styles/color";
 import { BellImg } from "../../assets/Bell";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
 
 export const LeftSideBar = () => {
   const navigate = useNavigate();
@@ -36,26 +35,37 @@ export const LeftSideBar = () => {
         <BellImg />
         Last-Bell
       </Title>
-
-      <ListWrapper>
-        <List onClick={moveToDashBoard}>대시보드</List>
-        <List onClick={moveToExamAnd}>시험&수행평가</List>
-        <List onClick={moveToSchoolSchedule}>학사 일정</List>
-        <List onClick={moveToFloorMap}>층별 지도</List>
-        <List onClick={moveToTimeTableAndMeal}>시간표&급식</List>
-        <List onClick={moveToSetting}>설정</List>
-      </ListWrapper>
+      <WrapperS>
+        <ListWrapper>
+          <List onClick={moveToDashBoard}>대시보드</List>
+          <List onClick={moveToExamAnd}>시험&수행평가</List>
+          <List onClick={moveToSchoolSchedule}>학사일정</List>
+          <List onClick={moveToFloorMap}>층별지도</List>
+          <List onClick={moveToTimeTableAndMeal}>시간표&급식</List>
+          <List onClick={moveToSetting}>설정</List>
+        </ListWrapper>
+      </WrapperS>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  background-color: ${Colors.Blue300};
+  background-color: ${Colors.Blue50};
   width: 300px;
   padding: 30px;
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
+`;
+
+const WrapperS = styled.div`
+  background-color: ${Colors.Blue200};
+  height: 85vh;
+  width: 200px;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.div`
@@ -66,6 +76,7 @@ const Title = styled.div`
   color: ${Colors.Blue900};
   align-items: center;
   margin-right: 20px;
+  margin-bottom: 20px;
 `;
 
 const ListWrapper = styled.div`
@@ -86,13 +97,4 @@ const List = styled.div`
   &:hover {
     background-color: ${Colors.Blue100};
   }
-`;
-
-const List_Main = styled.div`
-  border-radius: 10px;
-  padding: 18px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: ${Colors.Blue500};
-  color: ${Colors.White};
 `;

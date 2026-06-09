@@ -29,5 +29,5 @@ const Wrapper = styled.div`
 
 const Right = styled.div`
   width: 100%;
-  background-color: ${Colors.Blue100};
+  background-color: ${Colors.Blue50};
 `;
