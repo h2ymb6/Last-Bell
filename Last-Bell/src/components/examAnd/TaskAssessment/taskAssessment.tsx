@@ -29,7 +29,6 @@ const Text = styled.div`
   font-size: 21px;
   font-weight: 700;
   margin-left: 30px;
-  margin-bottom: 10px;
   padding-top: 25px;
 `;
 

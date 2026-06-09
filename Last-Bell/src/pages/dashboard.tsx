@@ -43,7 +43,6 @@ const DashBoard = () => {
     <MainLayOut title="대시보드">
       <MainContainer>
         <LeftSection>
-          <HiText>안녕, 태연!</HiText>
           <ExamNotice />
           <TodaySchoolMeal />
         </LeftSection>
@@ -60,13 +59,6 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
-
-const HiText = styled.p`
-  font-size: 50px;
-  margin-top: 10px;
-  margin-bottom: -10px;
-  font-weight: 600;
-`;
 
 const MainContainer = styled.div`
   display: flex;
@@ -87,5 +79,5 @@ const LeftSection = styled.div`
 
 const RightSection = styled.div`
   flex: 0.8;
-  margin-top: 100px;
+  margin-top: 20px;
 `;

@@ -52,11 +52,11 @@ const Top = styled.div`
 const Time = styled.div`
   border-bottom: 4px solid ${Colors.Blue500};
   margin-left: 5px;
-  font-size: 30px;
+  font-size: 26px;
 `;
 
 const Main = styled.div`
-  font-size: 40px;
+  font-size: 33px;
   font-weight: 700;
   display: flex;
   justify-content: space-between;
