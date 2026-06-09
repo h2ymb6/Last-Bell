@@ -7,7 +7,7 @@ const TaskAssessment = () => {
       <WrapperREAL>
         <Text>수행평가 관리</Text>
         <Wrapper>
-          <SubjectEach title="긴급 (마감 임박)" subtitle='마감임박' color="Red" />
+          <SubjectEach title="긴급" subtitle="(마감임박)" color="Red" />
           <SubjectEach title="진행 중" color="orange" />
           <SubjectEach title="준비 중" color="Green" />
         </Wrapper>
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 30px;
+  font-size: 21px;
   font-weight: 700;
   margin-left: 30px;
   margin-bottom: 10px;
@@ -34,9 +34,10 @@ const Text = styled.div`
 `;
 
 const WrapperREAL = styled.div`
+  padding-top: 5px;
   background-color: white;
-  width: 940px;
-  height: 420px;
+  width: 930px;
+  height: 400px;
   box-sizing: border-box;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;

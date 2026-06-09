@@ -8,11 +8,17 @@ interface SubjectEachProps {
   subtitle?: string;
 }
 
-export const SubjectEach = ({ title, color, subtitle }) => {
+export const SubjectEach = ({
+  title,
+  color,
+  subtitle = "",
+}: SubjectEachProps) => {
   return (
     <>
       <Wrapper>
-        <Title color={color}>{title}</Title>
+        <Title color={color}>
+          {title} <Subtitle>{subtitle}</Subtitle>
+        </Title>
 
         <WrapperEach>
           <Each title="국어" text="수필 제출" date="~12.12" />
@@ -22,6 +28,12 @@ export const SubjectEach = ({ title, color, subtitle }) => {
     </>
   );
 };
+
+const Subtitle = styled.div`
+  font-size: 16px;
+  margin-top: 4px;
+  margin-left: 3px;
+`;
 
 const Wrapper = styled.div`
   width: 280px;
@@ -47,5 +59,6 @@ const Title = styled.div`
   justify-content: start;
   font-size: 20px;
   padding-bottom: 10px;
+  font-weight: 600;
   border-bottom: 3px solid ${(props) => Colors[`${props.color}500`]};
 `;

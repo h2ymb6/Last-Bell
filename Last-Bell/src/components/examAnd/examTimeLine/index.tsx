@@ -1,4 +1,3 @@
-import { Colors } from "../../../styles/color";
 import Each from "./each";
 import styled from "styled-components";
 
@@ -29,6 +28,7 @@ const Wrapper = styled.div`
   gap: 10px;
   border-radius: 14px;
   display: flex;
+  padding: 5px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 600;
   align-self: flex-start;
   padding-left: 20px;

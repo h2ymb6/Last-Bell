@@ -29,7 +29,7 @@ function ScheduleListSection({
             </ScheduleRow>
           ))
         ) : (
-          <NoData>📅 오늘은 등록된 일정이 없어요</NoData>
+          <NoData>오늘은 등록된 일정이 없어요</NoData>
         )}
       </ScheduleList>
     </SideScheduleWrapper>
@@ -42,7 +42,6 @@ const SideScheduleWrapper = styled.div`
   flex: 0.8;
   background-color: white;
   padding: 24px;
-  border: 1px solid ${Colors.Blue300};
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-self: flex-start;
@@ -56,7 +55,7 @@ const SideHeader = styled.div`
 `;
 
 const SideTitle = styled.h2`
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
   margin: 0;
 `;

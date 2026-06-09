@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   margin-bottom: 20px;
 `;

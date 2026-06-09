@@ -23,7 +23,7 @@ export const SearchSectionCard = styled.section`
 `;
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: 21px;
   color: #1a2538;
   margin: 0 0 10px 0;
   font-weight: 700;
