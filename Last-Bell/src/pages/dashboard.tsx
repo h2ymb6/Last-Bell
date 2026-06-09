@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
 import { MainLayOut } from "../layouts/mainLayout";
@@ -43,6 +43,7 @@ const DashBoard = () => {
     <MainLayOut title="대시보드">
       <MainContainer>
         <LeftSection>
+          <HiText>안녕, 태연!</HiText>
           <ExamNotice />
           <TodaySchoolMeal />
         </LeftSection>
@@ -60,11 +61,18 @@ const DashBoard = () => {
 
 export default DashBoard;
 
+const HiText = styled.p`
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  font-weight: 600;
+`;
+
 const MainContainer = styled.div`
   display: flex;
   gap: 30px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 30px;
@@ -79,4 +87,5 @@ const LeftSection = styled.div`
 
 const RightSection = styled.div`
   flex: 0.8;
+  margin-top: 100px;
 `;

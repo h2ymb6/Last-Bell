@@ -2,24 +2,30 @@ import Each from "../TaskAssessment/Each";
 import styled from "styled-components";
 import { Colors } from "../../../styles/color";
 
-export const SubjectEach = ({ title, color }) => {
+interface SubjectEachProps {
+  title: string;
+  color: string;
+  subtitle?: string;
+}
+
+export const SubjectEach = ({ title, color, subtitle }) => {
   return (
     <>
-      <div>
+      <Wrapper>
         <Title color={color}>{title}</Title>
-        <Wrapper color={color}>
-          <Each title="국어" text="수필 제출" date="12월 19일 마감" />
-          <Each title="영어" text="ppt발표" date="12월 19일 마감" />
-        </Wrapper>
-      </div>
+
+        <WrapperEach>
+          <Each title="국어" text="수필 제출" date="~12.12" />
+          <Each title="영어" text="ppt발표" date="~12.12" />
+        </WrapperEach>
+      </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
-  background-color: ${(props) => Colors[`${props.color}200`]};
   width: 280px;
-  height: 230px;
+  height: 310px;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -28,13 +34,18 @@ const Wrapper = styled.div`
   border-radius: 0px 0px 10px 10px;
 `;
 
+const WrapperEach = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
 const Title = styled.div`
-  width: 280px;
-  height: 70px;
-  border-radius: 10px 10px 0px 0px;
-  color: white;
+  width: 250px;
+  color: ${(props) => props.color};
+  display: flex;
+  justify-content: start;
   font-size: 20px;
-  display: grid;
-  place-items: center;
-  background-color: ${(props) => Colors[`${props.color}500`]};
+  padding-bottom: 10px;
+  border-bottom: 3px solid ${(props) => Colors[`${props.color}500`]};
 `;

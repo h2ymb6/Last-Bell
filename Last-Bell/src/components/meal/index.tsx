@@ -30,37 +30,36 @@ function TodaySchoolMeal() {
   return (
     <>
       <Wrapper>
-        <TodayDate>{new Date().toLocaleDateString()}</TodayDate>
-
         <Title>오늘의 급식 메뉴</Title>
         <Meals>
           <MealCon>
             <EachTitle>아침</EachTitle>
-            <div>
+            <Meal>
               {breakfast.map((item, i) => {
                 return <Each key={i}>{item}</Each>;
               })}
-            </div>
+            </Meal>
             <div></div>
           </MealCon>
 
           <MealCon>
             <EachTitle>점심</EachTitle>
-            <div>
+            <Meal>
               {lunch.map((item, i) => {
                 return <Each key={i}>{item}</Each>;
               })}
-            </div>
+            </Meal>
             <div></div>
           </MealCon>
 
           <MealCon>
             <EachTitle>저녁</EachTitle>
-            <div>
+            <Meal>
               {dinner.map((item, i) => {
                 return <Each key={i}>{item}</Each>;
               })}
-            </div>
+            </Meal>
+
             <div></div>
           </MealCon>
         </Meals>
@@ -71,46 +70,53 @@ function TodaySchoolMeal() {
 
 export default TodaySchoolMeal;
 
-const TodayDate = styled.div`
-  font-size: 20px;
-`;
-
 const Wrapper = styled.div`
   background-color: white;
   padding: 20px;
-  border: 1px solid ${Colors.Blue300};
-  box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
+  width: 700px;
+  height: 340px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const Meals = styled.div`
   display: flex;
 `;
 
+const Meal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+`;
+
 const EachTitle = styled.div`
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+`;
+
+const Each = styled.div`
+  font-size: 18px;
+`;
+
+const Title = styled.h1`
   font-size: 22px;
   font-weight: 600;
 `;
 
-const Each = styled.div`
-  font-size: 20px;
-  margin: 20px;
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 600;
-`;
-
 const MealCon = styled.div`
-  margin: 20px;
+  margin: 10px;
+  margin-top: 20px;
   padding: 20px;
   box-sizing: border-box;
-  background-color: ${Colors.Blue200};
-  width: 250px;
+  background-color: ${Colors.Blue100};
+  width: 210px;
   height: 300px;
   display: flex;
-  justify-content: start;
   align-items: center;
   flex-direction: column;
   border-radius: 20px;

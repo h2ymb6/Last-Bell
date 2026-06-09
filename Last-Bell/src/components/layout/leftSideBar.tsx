@@ -3,8 +3,13 @@ import { Colors } from "../../styles/color";
 import { BellImg } from "../../assets/Bell";
 import { useNavigate, useLocation } from "react-router-dom";
 
+interface ListProps {
+  active: boolean;
+}
+
 export const LeftSideBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const moveToDashBoard = () => {
     navigate("/");
@@ -37,12 +42,44 @@ export const LeftSideBar = () => {
       </Title>
       <WrapperS>
         <ListWrapper>
-          <List onClick={moveToDashBoard}>대시보드</List>
-          <List onClick={moveToExamAnd}>시험&수행평가</List>
-          <List onClick={moveToSchoolSchedule}>학사일정</List>
-          <List onClick={moveToFloorMap}>층별지도</List>
-          <List onClick={moveToTimeTableAndMeal}>시간표&급식</List>
-          <List onClick={moveToSetting}>설정</List>
+          <List active={location.pathname === "/"} onClick={moveToDashBoard}>
+            대시보드
+          </List>
+
+          <List
+            active={location.pathname === "/ExamAnd"}
+            onClick={moveToExamAnd}
+          >
+            시험&수행평가
+          </List>
+
+          <List
+            active={location.pathname === "/SchoolSchedule"}
+            onClick={moveToSchoolSchedule}
+          >
+            학사일정
+          </List>
+
+          <List
+            active={location.pathname === "/FloorMap"}
+            onClick={moveToFloorMap}
+          >
+            층별지도
+          </List>
+
+          <List
+            active={location.pathname === "/TimeTableAndMeal"}
+            onClick={moveToTimeTableAndMeal}
+          >
+            시간표&급식
+          </List>
+
+          <List
+            active={location.pathname === "/Setting"}
+            onClick={moveToSetting}
+          >
+            설정
+          </List>
         </ListWrapper>
       </WrapperS>
     </Wrapper>
@@ -51,7 +88,7 @@ export const LeftSideBar = () => {
 
 const Wrapper = styled.div`
   background-color: ${Colors.Blue50};
-  width: 300px;
+  width: 290px;
   padding: 30px;
   height: 100vh;
   overflow: hidden;
@@ -59,9 +96,10 @@ const Wrapper = styled.div`
 `;
 
 const WrapperS = styled.div`
-  background-color: ${Colors.Blue200};
+  background-color: white;
+  border: 1px solid #e5e7eb;
   height: 85vh;
-  width: 200px;
+  width: 190px;
   display: flex;
   border-radius: 20px;
   flex-direction: column;
@@ -88,13 +126,17 @@ const ListWrapper = styled.div`
   margin-top: 30px;
 `;
 
-const List = styled.div`
+const List = styled.div<ListProps>`
   border-radius: 10px;
-  padding: 18px 20px;
+  padding: 14px 18px;
   font-size: 20px;
   cursor: pointer;
 
+  background-color: ${({ active }) => (active ? Colors.Blue100 : "")};
+
+  color: ${({ active }) => (active ? Colors.Blue800 : "black")};
+
   &:hover {
-    background-color: ${Colors.Blue100};
+    background-color: ${Colors.Blue50};
   }
 `;

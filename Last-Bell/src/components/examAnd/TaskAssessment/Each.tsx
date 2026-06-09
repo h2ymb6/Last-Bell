@@ -4,9 +4,11 @@ const Each = ({ title, text, date }) => {
   return (
     <>
       <Wrapper>
-        <Title>{title}</Title>
+        <Top>
+          <Title>{title}</Title>
+          <ExamDate>{date}</ExamDate>
+        </Top>
         <Text>{text}</Text>
-        <ExamDate>{date}</ExamDate>
       </Wrapper>
     </>
   );
@@ -14,17 +16,24 @@ const Each = ({ title, text, date }) => {
 
 export default Each;
 
+const Top = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+`;
+
 const Title = styled.div`
-  font-size: 19px;
+  font-size: 15px;
+  color: gray;
 `;
 
 const Text = styled.div`
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 600;
 `;
 
 const ExamDate = styled.div`
-  font-size: 17px;
+  font-size: 14px;
   color: gray;
 `;
 
@@ -33,11 +42,12 @@ const Wrapper = styled.div`
   width: 250px;
   height: 90px;
   box-sizing: border-box;
-  padding-left: 12px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  
   gap: 7px;
+  border: 1px solid #e8e8e8;
+  padding-bottom: 15px;
 `;

@@ -23,7 +23,7 @@ const ExamDate = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: ${Colors.Blue200};
+  background-color: ${Colors.Blue100};
   width: 180px;
   height: 80px;
   box-sizing: border-box;

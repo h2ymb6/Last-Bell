@@ -32,7 +32,6 @@ function TodaySchoolTimetable() {
 
   return (
     <Wrapper>
-      <TodayDate>{new Date().toLocaleDateString()}</TodayDate>
       <Title>오늘의 시간표</Title>
 
       <TimetableList>
@@ -44,7 +43,7 @@ function TodaySchoolTimetable() {
             </PeriodCon>
           ))
         ) : (
-          <NoData>오늘은 시간표 정보가 없거나 주말입니다. 😎</NoData>
+          <NoData>오늘은 시간표 정보가 없거나 주말입니다.</NoData>
         )}
       </TimetableList>
     </Wrapper>
@@ -53,21 +52,15 @@ function TodaySchoolTimetable() {
 
 export default TodaySchoolTimetable;
 
-// --- 아래 스타일 컴포넌트는 형님 코드와 동일 ---
 const Wrapper = styled.div`
   background-color: white;
   padding: 20px;
-  border: 1px solid ${Colors.Blue300};
-  box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 `;
 
-const TodayDate = styled.div`
-  font-size: 20px;
-`;
-
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
 `;
@@ -81,7 +74,7 @@ const TimetableList = styled.div`
 const PeriodCon = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${Colors.Blue200};
+  background-color: ${Colors.Blue100};
   padding: 15px 25px;
   border-radius: 15px;
   width: 100%;
@@ -90,15 +83,15 @@ const PeriodCon = styled.div`
 `;
 
 const PeriodNum = styled.div`
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: ${Colors.Blue900};
   margin-right: 30px;
   width: 60px;
 `;
 
 const SubjectName = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 `;
 

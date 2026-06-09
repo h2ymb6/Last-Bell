@@ -27,21 +27,18 @@ const Img = styled.img`
 `;
 
 const Wrapper = styled.div`
-  background: linear-gradient(
-    to right,
-    ${Colors.Blue300} 40%,
-    ${Colors.Yellow200} 100%
-  );
-  box-shadow: 0px 0px 10px 2px ${Colors.Blue300};
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   width: 900px;
-  height: 250px;
+  height: 280px;
   border-radius: 20px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  padding-left: 20px;
+  padding-left: 4cqh;
+  padding-bottom: 40px;
   box-sizing: border-box;
 `;
 
@@ -53,14 +50,14 @@ const Top = styled.div`
 `;
 
 const Time = styled.div`
-  background-color: ${Colors.Yellow200};
-  padding: 5px;
-  border-radius: 10px;
+  border-bottom: 4px solid ${Colors.Blue500};
+  margin-left: 5px;
+  font-size: 30px;
 `;
 
 const Main = styled.div`
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
   display: flex;
   justify-content: space-between;
   align-items: center;
