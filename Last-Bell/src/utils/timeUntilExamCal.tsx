@@ -1,3 +1,5 @@
+export type ExamTheme = "normal" | "warning" | "danger" | "exam" | "done";
+
 const TimeUntilExam = () => {
   const startDate = "2026-06-29";
   const endDate = "2026-07-01";
@@ -27,20 +29,38 @@ const TimeUntilExam = () => {
     (start.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
   );
 
-  //시험 중
   if (today >= start && today <= end) {
-    return <p>시험 화이팅!</p>;
+    return {
+      label: "시험 화이팅!",
+      theme: "exam" as const,
+    };
   }
 
-  //시험 전
-  if (today < start) {
-    return <p>D-{daysUntilExam}</p>;
-  }
-
-  //시험 끝
   if (today > end) {
-    return <p>시험 끝!</p>;
+    return {
+      label: "시험 끝!",
+      theme: "done" as const,
+    };
   }
+
+  if (daysUntilExam <= 3) {
+    return {
+      label: `D-${daysUntilExam}`,
+      theme: "danger" as const,
+    };
+  }
+
+  if (daysUntilExam <= 7) {
+    return {
+      label: `D-${daysUntilExam}`,
+      theme: "warning" as const,
+    };
+  }
+
+  return {
+    label: `D-${daysUntilExam}`,
+    theme: "normal" as const,
+  };
 };
 
 export default TimeUntilExam;

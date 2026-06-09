@@ -4,11 +4,21 @@ import styled from "styled-components";
 import img from "../../assets/cat.png";
 
 const ExamNotice = () => {
+  const examInfo = TimeUntilExam();
+
+  const timeColor =
+    examInfo.theme === "danger"
+      ? "#ef4444"
+      : examInfo.theme === "warning"
+        ? "#f59e0b"
+        : Colors.Blue500;
+
   return (
     <Wrapper>
       <Top>
-        시험까지 남은 시간: <Time>{TimeUntilExam()}</Time>
+        시험까지 남은 시간: <Time $timeColor={timeColor}>{examInfo.label}</Time>
       </Top>
+
       <Main>
         끝까지 포기하지마! <br /> 오늘도 힘내자!
         <Img src={img} alt="" />
@@ -49,8 +59,8 @@ const Top = styled.div`
   align-items: center;
 `;
 
-const Time = styled.div`
-  border-bottom: 4px solid ${Colors.Blue500};
+const Time = styled.div<{ $timeColor: string }>`
+  border-bottom: 4px solid ${({ $timeColor }) => $timeColor};
   margin-left: 5px;
   font-size: 26px;
 `;

@@ -61,23 +61,19 @@ const DashBoard = () => {
 export default DashBoard;
 
 const MainContainer = styled.div`
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 32px;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 30px;
 `;
 
 const LeftSection = styled.div`
-  flex: 1.2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 32px;
 `;
 
 const RightSection = styled.div`
-  flex: 0.8;
-  margin-top: 20px;
+  margin: 0;
 `;

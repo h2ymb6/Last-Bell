@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Colors } from "../../styles/color";
-import { BellImg } from "../../assets/Bell";
+import { Colors } from "../styles/color";
+import { BellImg } from "../assets/Bell";
 import { useNavigate, useLocation } from "react-router-dom";
 
 interface ListProps {

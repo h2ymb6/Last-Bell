@@ -23,10 +23,10 @@ export default ExamTimeLine;
 const Wrapper = styled.div`
   background-color: White;
   width: 410px;
-  height: 250px;
+  height: 270px;
   margin-top: 20px;
   gap: 10px;
-  border-radius: 14px;
+  border-radius: 20px;
   display: flex;
   padding: 5px;
   flex-direction: column;

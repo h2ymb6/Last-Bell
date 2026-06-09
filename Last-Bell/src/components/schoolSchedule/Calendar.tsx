@@ -48,7 +48,7 @@ function CalendarSection({
 export default CalendarSection;
 
 const CalendarWrapper = styled.div`
-  flex: 1.2;
+  width: 60%;
   background-color: white;
   padding: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -59,36 +59,21 @@ const StyledCalendar = styled.div`
   .react-calendar {
     width: 100%;
     border: none;
-    font-family: inherit;
   }
 
   .react-calendar__navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 24px;
-    position: relative;
 
     button {
       font-size: 24px;
-      font-weight: 700;
       color: #333;
-      background: none;
-      border: none;
       cursor: pointer;
       padding: 4px 12px;
-
-      &:disabled {
-        background-color: transparent;
-      }
     }
 
     .react-calendar__navigation__label {
-      flex-grow: 0;
       font-size: 24px;
       font-weight: 700;
-      cursor: default;
-      pointer-events: none;
     }
   }
 
@@ -105,10 +90,10 @@ const StyledCalendar = styled.div`
     }
 
     &__weekday:nth-child(1) abbr {
-      color: #ff4d4f;
+      color: red;
     }
     &__weekday:nth-child(7) abbr {
-      color: #1890ff;
+      color: blue;
     }
   }
 
@@ -140,10 +125,10 @@ const StyledCalendar = styled.div`
   }
 
   .react-calendar__month-view__days__day:nth-child(7n + 1) {
-    color: #ff4d4f;
+    color: red;
   }
   .react-calendar__month-view__days__day:nth-child(7n) {
-    color: #1890ff;
+    color: blue;
   }
 
   .react-calendar__tile--active {
@@ -158,10 +143,10 @@ const StyledCalendar = styled.div`
 `;
 
 const ScheduleDot = styled.div`
-  width: 6px;
-  height: 6px;
-  background-color: #1890ff;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  background-color: ${Colors.Blue800};
   position: absolute;
   bottom: 8px;
 `;

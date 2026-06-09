@@ -1,4 +1,4 @@
-import Each from "../TaskAssessment/Each";
+import Each from "./Each";
 import styled from "styled-components";
 import { Colors } from "../../../styles/color";
 

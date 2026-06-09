@@ -39,13 +39,14 @@ function ScheduleListSection({
 export default ScheduleListSection;
 
 const SideScheduleWrapper = styled.div`
-  flex: 0.8;
+  margin-top: 20px;
   background-color: white;
   padding: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-self: flex-start;
-  height: 232px;
+  height: 230px;
+  width: 300px;
 `;
 
 const SideHeader = styled.div`

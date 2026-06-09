@@ -40,6 +40,4 @@ const WrapperREAL = styled.div`
   box-sizing: border-box;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-  margin-left: 30px;
-  margin-top: 30px;
 `;
