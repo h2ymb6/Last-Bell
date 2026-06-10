@@ -1,7 +1,7 @@
 export type ExamTheme = "normal" | "warning" | "danger" | "exam" | "done";
 
 const TimeUntilExam = () => {
-  const startDate = "2026-06-29";
+  const startDate = "2026-06-12";
   const endDate = "2026-07-01";
 
   const parseLocalDate = (dateStr: string): Date => {

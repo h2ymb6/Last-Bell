@@ -5,21 +5,39 @@ import img from "../../assets/cat.png";
 
 const ExamNotice = () => {
   const examInfo = TimeUntilExam();
+  const isWarning = examInfo.theme === "warning";
+  const isDanger = examInfo.theme === "danger";
+  const isUrgent = isWarning || isDanger;
 
-  const timeColor =
-    examInfo.theme === "danger"
-      ? "#ef4444"
-      : examInfo.theme === "warning"
-        ? "#f59e0b"
-        : Colors.Blue500;
+  const themeColor = isDanger
+    ? "#ef4444"
+    : isWarning
+      ? "#f59e0b"
+      : Colors.Blue500;
+
+  const themeBg = isDanger ? "#fff1f2" : isWarning ? "#fffbeb" : "white";
+
+  const shadowColor = isDanger
+    ? "rgba(239, 68, 68, 0.22)"
+    : isWarning
+      ? "rgba(245, 158, 11, 0.22)"
+      : "rgba(0, 0, 0, 0.08)";
 
   return (
-    <Wrapper>
-      <Top>
-        시험까지 남은 시간: <Time $timeColor={timeColor}>{examInfo.label}</Time>
+    <Wrapper
+      $isUrgent={isUrgent}
+      $themeColor={themeColor}
+      $themeBg={themeBg}
+      $shadowColor={shadowColor}
+    >
+      <Top $isUrgent={isUrgent} $themeColor={themeColor}>
+        시험까지 남은 시간:{" "}
+        <Time $isUrgent={isUrgent} $themeColor={themeColor}>
+          {examInfo.label}
+        </Time>
       </Top>
 
-      <Main>
+      <Main $isUrgent={isUrgent} $themeColor={themeColor}>
         끝까지 포기하지마! <br /> 오늘도 힘내자!
         <Img src={img} alt="" />
       </Main>
@@ -36,9 +54,14 @@ const Img = styled.img`
   position: absolute;
 `;
 
-const Wrapper = styled.div`
-  background: white;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+const Wrapper = styled.div<{
+  $isUrgent: boolean;
+  $themeColor: string;
+  $themeBg: string;
+  $shadowColor: string;
+}>`
+  background: ${({ $themeBg }) => $themeBg};
+  box-shadow: 0 10px 30px ${({ $shadowColor }) => $shadowColor};
   width: 900px;
   height: 280px;
   border-radius: 20px;
@@ -47,27 +70,35 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  padding-left: 4cqh;
+  padding-left: 40px;
   padding-bottom: 40px;
   box-sizing: border-box;
+  border: ${({ $isUrgent, $themeColor }) =>
+    $isUrgent ? `2px solid ${$themeColor}` : "none"};
 `;
 
-const Top = styled.div`
+const Top = styled.div<{ $isUrgent: boolean; $themeColor: string }>`
   display: flex;
-  font-size: 22px;
+  font-size: ${({ $isUrgent }) => ($isUrgent ? "26px" : "22px")};
   font-weight: 700;
   align-items: center;
+  color: ${({ $isUrgent, $themeColor }) =>
+    $isUrgent ? $themeColor : "inherit"};
 `;
 
-const Time = styled.div<{ $timeColor: string }>`
-  border-bottom: 4px solid ${({ $timeColor }) => $timeColor};
+const Time = styled.div<{ $themeColor: string; $isUrgent: boolean }>`
+  border-bottom: 4px solid ${({ $themeColor }) => $themeColor};
   margin-left: 5px;
-  font-size: 26px;
+  font-size: ${({ $isUrgent }) => ($isUrgent ? "34px" : "26px")};
+  font-weight: 800;
+  color: ${({ $themeColor }) => $themeColor};
 `;
 
-const Main = styled.div`
-  font-size: 33px;
+const Main = styled.div<{ $isUrgent: boolean; $themeColor: string }>`
+  font-size: ${({ $isUrgent }) => ($isUrgent ? "38px" : "33px")};
   font-weight: 700;
+  color: ${({ $isUrgent, $themeColor }) =>
+    $isUrgent ? $themeColor : "inherit"};
   display: flex;
   justify-content: space-between;
   align-items: center;

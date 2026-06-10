@@ -1,12 +1,14 @@
 import { MainLayOut } from "../layouts/mainLayout";
 import styled from "styled-components";
 import Profile from "../components/setting/Profile";
+import SendFeedback from "../components/setting/SendFeedback";
 
 const Setting = () => {
   return (
     <MainLayOut title="설정">
       <MainContainer>
         <Profile />
+        <SendFeedback />
       </MainContainer>
     </MainLayOut>
   );
