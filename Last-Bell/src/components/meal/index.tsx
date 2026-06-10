@@ -4,7 +4,12 @@ import MealApi from "../../apis/meal/index";
 import { Colors } from "../../styles/color";
 
 function TodaySchoolMeal() {
-  const [meal, setMeal] = useState([]);
+  const [meal, setMeal] = useState<any[]>([]);
+  const [favoriteMeals, setFavoriteMeals] = useState<string[]>(() => {
+    const saved = localStorage.getItem("favoriteMeals");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   useEffect(() => {
     const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
 
@@ -18,53 +23,68 @@ function TodaySchoolMeal() {
     load();
   }, []);
 
-  const cleanMealData = (text) => {
+  useEffect(() => {
+    localStorage.setItem("favoriteMeals", JSON.stringify(favoriteMeals));
+  }, [favoriteMeals]);
+
+  const cleanMealData = (text: string) => {
     if (!text) return [];
     return text.split("<br/>").map((food) => food.split("(")[0].trim());
+  };
+
+  const toggleFavorite = (food: string) => {
+    setFavoriteMeals((prev) =>
+      prev.includes(food)
+        ? prev.filter((item) => item !== food)
+        : [...prev, food],
+    );
   };
 
   const breakfast = cleanMealData(meal[0]?.DDISH_NM);
   const lunch = cleanMealData(meal[1]?.DDISH_NM);
   const dinner = cleanMealData(meal[2]?.DDISH_NM);
 
+  const renderMealList = (items: string[]) => {
+    return items.map((item, i) => {
+      const isFavorite = favoriteMeals.includes(item);
+
+      return (
+        <Each key={i}>
+          <FoodName>{item}</FoodName>
+          <StarButton
+            type="button"
+            onClick={() => toggleFavorite(item)}
+            $active={isFavorite}
+            aria-label={`${item} 즐겨찾기`}
+          >
+            ★
+          </StarButton>
+        </Each>
+      );
+    });
+  };
+
   return (
-    <>
-      <Wrapper>
-        <Title>오늘의 급식 메뉴</Title>
-        <Meals>
-          <MealCon>
-            <EachTitle>아침</EachTitle>
-            <Meal>
-              {breakfast.map((item, i) => {
-                return <Each key={i}>{item}</Each>;
-              })}
-            </Meal>
-            <div></div>
-          </MealCon>
+    <Wrapper>
+      <Title>오늘의 급식 메뉴</Title>
 
-          <MealCon>
-            <EachTitle>점심</EachTitle>
-            <Meal>
-              {lunch.map((item, i) => {
-                return <Each key={i}>{item}</Each>;
-              })}
-            </Meal>
-            <div></div>
-          </MealCon>
+      <Meals>
+        <MealCon>
+          <EachTitle>아침</EachTitle>
+          <Meal>{renderMealList(breakfast)}</Meal>
+        </MealCon>
 
-          <MealCon>
-            <EachTitle>저녁</EachTitle>
-            <Meal>
-              {dinner.map((item, i) => {
-                return <Each key={i}>{item}</Each>;
-              })}
-            </Meal>
+        <MealCon>
+          <EachTitle>점심</EachTitle>
+          <Meal>{renderMealList(lunch)}</Meal>
+        </MealCon>
 
-            <div></div>
-          </MealCon>
-        </Meals>
-      </Wrapper>
-    </>
+        <MealCon>
+          <EachTitle>저녁</EachTitle>
+          <Meal>{renderMealList(dinner)}</Meal>
+        </MealCon>
+      </Meals>
+    </Wrapper>
   );
 }
 
@@ -87,10 +107,10 @@ const Meals = styled.div`
 `;
 
 const Meal = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  gap: 12px;
 `;
 
 const EachTitle = styled.div`
@@ -100,7 +120,31 @@ const EachTitle = styled.div`
 `;
 
 const Each = styled.div`
+  width: 100%;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+`;
+
+const FoodName = styled.span`
+  flex: 1;
+  text-align: center;
+`;
+
+const StarButton = styled.button<{ $active: boolean }>`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: ${({ $active }) => ($active ? "#facc15" : "#cbd5e1")};
+  padding: 0;
+
+  &:hover {
+    color: #facc15;
+  }
 `;
 
 const Title = styled.h1`

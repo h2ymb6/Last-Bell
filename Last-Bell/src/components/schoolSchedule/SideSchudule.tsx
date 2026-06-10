@@ -45,7 +45,7 @@ const SideScheduleWrapper = styled.div`
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-self: flex-start;
-  height: 230px;
+  height: 180px;
   width: 300px;
 `;
 

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Colors } from "../styles/color";
-import { FaBell } from "react-icons/fa";
 
 interface HeaderProps {
   title: string;
@@ -12,9 +11,6 @@ export const Header = ({ title }: HeaderProps) => {
       <Wrapper>
         <Title>{title}</Title>
         <Right>
-          <Bell>
-            <FaBell />
-          </Bell>
           <ProfileWrapper>
             <ProfileImg></ProfileImg>
             <ProfileName>이태연</ProfileName>
@@ -32,6 +28,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex: 1;
   height: 50px;
+  margin-top: 10px;
 `;
 
 const Right = styled.div`
@@ -43,11 +40,6 @@ const Right = styled.div`
 const Title = styled.div`
   font-size: 30px;
   font-weight: 700;
-`;
-
-const Bell = styled.div`
-  margin-top: 8px;
-  transform: scale(1.3);
 `;
 
 const ProfileWrapper = styled.div`

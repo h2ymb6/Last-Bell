@@ -1,23 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 32px;
   width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   box-sizing: border-box;
-  font-family:
-    "Pretendard",
-    -apple-system,
-    sans-serif;
+  padding-right: 50px;
 `;
 
 export const SearchSectionCard = styled.section`
   background-color: #ffffff;
   border-radius: 16px;
+  width: 400px;
   padding: 40px;
   box-shadow: 0 4px 16px rgba(140, 170, 210, 0.15);
 `;
@@ -25,20 +20,13 @@ export const SearchSectionCard = styled.section`
 export const Title = styled.h2`
   font-size: 21px;
   color: #1a2538;
-  margin: 0 0 10px 0;
   font-weight: 700;
-`;
-
-export const Description = styled.p`
-  font-size: 14px;
-  color: #627289;
-  margin: 0 0 24px 0;
 `;
 
 export const SearchBarWrap = styled.div`
   position: relative;
   width: 100%;
-  margin-bottom: 40px;
+  margin-top: 15px;
 
   .search-icon {
     position: absolute;
@@ -74,7 +62,7 @@ export const SearchPlaceholder = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 20px;
   gap: 16px;
   color: #cbdcf2;
 
@@ -131,7 +119,7 @@ export const CardDescription = styled.p`
   color: #627289;
   line-height: 1.5;
   margin: 0 0 24px 0;
-  min-height: 39px; 
+  min-height: 39px;
 `;
 
 export const CardButton = styled.button`
@@ -144,7 +132,7 @@ export const CardButton = styled.button`
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: auto; 
+  margin-top: auto;
   transition: all 0.2s ease;
 
   &:hover {

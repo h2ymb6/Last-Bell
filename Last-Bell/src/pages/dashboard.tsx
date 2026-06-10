@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { format } from "date-fns";
 import { MainLayOut } from "../layouts/mainLayout";
 import ScheduleApi from "../apis/calender/index";
-
-import ExamNotice from "../components/dashBoard/ExamNotice";
+import TodaySchoolTimetable from "../components/todayshcooltime";
+import DismissalProgress from "../components/schoolSchedule/untilFriday";
 import TodaySchoolMeal from "../components/meal/index";
 import ScheduleListSection from "../components/schoolSchedule/SideSchudule";
+import ExamNotice from "../components/dashBoard/ExamNotice";
 
 const DashBoard = () => {
   const [schedules, setSchedules] = useState([]);
@@ -44,14 +45,26 @@ const DashBoard = () => {
       <MainContainer>
         <LeftSection>
           <ExamNotice />
-          <TodaySchoolMeal />
+          <div style={{ marginTop: "22px" }}>
+            <TodaySchoolMeal />
+          </div>
         </LeftSection>
-
         <RightSection>
-          <ScheduleListSection
-            selectedDate={today}
-            selectedSchedules={todaySchedules}
-          />
+          <TodaySchoolTimetable />
+          <div
+            style={{
+              display: "flex",
+              gap: "30px",
+              marginLeft: "-120px",
+              width: "550px",
+            }}
+          >
+            <ScheduleListSection
+              selectedDate={today}
+              selectedSchedules={todaySchedules}
+            />
+            <DismissalProgress selectedTime="cb_1420" />
+          </div>
         </RightSection>
       </MainContainer>
     </MainLayOut>
@@ -66,6 +79,7 @@ const MainContainer = styled.div`
   gap: 32px;
   width: 100%;
   box-sizing: border-box;
+  padding-right: 50px;
 `;
 
 const LeftSection = styled.div`
@@ -75,5 +89,6 @@ const LeftSection = styled.div`
 `;
 
 const RightSection = styled.div`
-  margin: 0;
+  margin-top: 20px;
+  margin-left: 50px;
 `;

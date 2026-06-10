@@ -143,8 +143,8 @@ const StyledCalendar = styled.div`
 `;
 
 const ScheduleDot = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: ${Colors.Blue800};
   position: absolute;

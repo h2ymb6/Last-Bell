@@ -8,8 +8,6 @@ export const FloorMap = () => {
     <MainLayOut title="층별 지도">
       <MainContainer>
         <SearchSection />
-
-        <Floor title="ㅇㅇㅇ" description="설명" icon="d" />
       </MainContainer>
     </MainLayOut>
   );

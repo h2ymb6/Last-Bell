@@ -55,6 +55,7 @@ export default TodaySchoolTimetable;
 const Wrapper = styled.div`
   background-color: white;
   padding: 20px;
+  width: 400px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 `;
