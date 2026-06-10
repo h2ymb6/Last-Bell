@@ -41,25 +41,31 @@ export default function SendFeedback() {
 const Wrapper = styled.div`
   margin-top: 20px;
   background-color: white;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-self: flex-start;
   width: 300px;
   height: 250px;
   box-sizing: border-box;
+
+  
 `;
 
 const Header = styled.div`
   border-bottom: 2px solid ${Colors.Blue200};
-  padding-bottom: 12px;
-  margin-bottom: 16px;
+  padding-bottom: 5px;
+  margin-bottom: 18px;
+  height: 42px;
+  display: flex;
+  align-items: center;
 `;
 
 const Title = styled.h2`
   font-size: 21px;
   font-weight: 600;
   margin: 0;
+  margin-top: -3px;
 `;
 
 const Textarea = styled.textarea`
