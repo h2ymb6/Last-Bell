@@ -1,5 +1,5 @@
 import type { Teacher } from "./mokData";
-import * as S from "./styles";
+import * as S from "../styles";
 
 type Props = {
   teacher: Teacher;

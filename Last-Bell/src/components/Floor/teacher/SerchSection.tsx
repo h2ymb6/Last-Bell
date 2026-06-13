@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as S from "./styles";
+import * as S from "../styles";
 import { TEACHERS, type Teacher } from "./mokData";
 import TeacherModal from "./Floor";
 
