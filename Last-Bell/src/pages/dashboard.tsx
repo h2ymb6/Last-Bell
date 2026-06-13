@@ -8,6 +8,7 @@ import DismissalProgress from "../components/schoolSchedule/untilFriday";
 import TodaySchoolMeal from "../components/meal/index";
 import ScheduleListSection from "../components/schoolSchedule/SideSchudule";
 import ExamNotice from "../components/dashBoard/ExamNotice";
+import VacationCountdown from "../components/todayshcooltime/VacationCountdown";
 
 const DashBoard = () => {
   const [schedules, setSchedules] = useState([]);
@@ -64,6 +65,7 @@ const DashBoard = () => {
               selectedSchedules={todaySchedules}
             />
             <DismissalProgress selectedTime="cb_1420" />
+            <VacationCountdown />
           </div>
         </RightSection>
       </MainContainer>

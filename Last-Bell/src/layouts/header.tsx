@@ -10,12 +10,7 @@ export const Header = ({ title }: HeaderProps) => {
     <>
       <Wrapper>
         <Title>{title}</Title>
-        <Right>
-          <ProfileWrapper>
-            <ProfileImg></ProfileImg>
-            <ProfileName>이태연</ProfileName>
-          </ProfileWrapper>
-        </Right>
+        <Right></Right>
       </Wrapper>
     </>
   );
@@ -40,21 +35,4 @@ const Right = styled.div`
 const Title = styled.div`
   font-size: 30px;
   font-weight: 700;
-`;
-
-const ProfileWrapper = styled.div`
-  display: flex;
-  gap: 15px;
-  align-items: center;
-`;
-
-const ProfileImg = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: ${Colors.Blue400};
-`;
-
-const ProfileName = styled.div`
-  font-size: 16px;
 `;
