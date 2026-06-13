@@ -36,6 +36,17 @@ export const useAdminTask = () => {
       return;
     }
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(form.dueDate);
+    selectedDate.setHours(0, 0, 0, 0);
+
+    if (selectedDate < today) {
+      alert("마감일이 이미 지난 날짜입니다.");
+      return;
+    }
+
     if (editId) {
       updateTaskAssessment({
         ...form,
@@ -63,6 +74,7 @@ export const useAdminTask = () => {
 
   const handleDelete = (id: string) => {
     if (!confirm("삭제하시겠습니까?")) return;
+
     deleteTaskAssessment(id);
     refresh();
   };
