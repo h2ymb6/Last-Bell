@@ -18,27 +18,38 @@ const ExamTimeLine = () => {
     <Wrapper>
       <Title>시험 과목별 일정</Title>
 
-      <ScrollArea>
-        {Object.entries(grouped).map(([date, items]) => (
-          <DateGroup key={date}>
-            <DateLabel>{date}</DateLabel>
-            <ItemRow>
-              {items.map((item, i) => (
-                <Each
-                  key={i}
-                  title={`${item.subject}`}
-                  date={`${item.period}교시`}
-                />
-              ))}
-            </ItemRow>
-          </DateGroup>
-        ))}
-      </ScrollArea>
+      {schedules.length === 0 ? (
+        <NoExam>시험이 없습니다.</NoExam>
+      ) : (
+        <ScrollArea>
+          {Object.entries(grouped).map(([date, items]) => (
+            <DateGroup key={date}>
+              <DateLabel>{date}</DateLabel>
+              <ItemRow>
+                {items.map((item, i) => (
+                  <Each
+                    key={i}
+                    title={`${item.subject}`}
+                    date={`${item.period}교시`}
+                  />
+                ))}
+              </ItemRow>
+            </DateGroup>
+          ))}
+        </ScrollArea>
+      )}
     </Wrapper>
   );
 };
 
 export default ExamTimeLine;
+
+const NoExam = styled.div`
+  font-size: 16px;
+  color: #999;
+  padding: 40px 0;
+  text-align: center;
+`;
 
 const Wrapper = styled.div`
   background-color: white;

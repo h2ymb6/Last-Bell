@@ -18,11 +18,11 @@ const Each = ({ title, date }: Props) => {
 export default Each;
 
 const Title = styled.div`
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 const ExamDate = styled.div`
-  font-size: 17px;
+  font-size: 16px;
 `;
 
 const Wrapper = styled.div`

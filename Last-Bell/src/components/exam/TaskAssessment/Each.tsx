@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 const Each = ({ title, text, date }) => {
   return (
-    <>
-      <Wrapper>
-        <Top>
-          <Title>{title}</Title>
-          <ExamDate>{date}</ExamDate>
-        </Top>
+    <Wrapper>
+      <Top>
+        <Title>{title}</Title>
+        <ExamDate>{date}</ExamDate>
+      </Top>
+      <Bottom>
         <Text>{text}</Text>
-      </Wrapper>
-    </>
+      </Bottom>
+    </Wrapper>
   );
 };
 
@@ -20,6 +20,12 @@ const Top = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3px;
+`;
+
+const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Title = styled.div`
@@ -38,9 +44,9 @@ const ExamDate = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: White;
+  background-color: white;
   width: 250px;
-  height: 90px;
+  min-height: 90px;
   box-sizing: border-box;
   padding: 12px;
   display: flex;
@@ -49,5 +55,16 @@ const Wrapper = styled.div`
   border-radius: 10px;
   gap: 7px;
   border: 1px solid #e8e8e8;
-  padding-bottom: 15px;
+`;
+
+const Actions = styled.div`
+  display: flex;
+  gap: 4px;
+`;
+
+const ActionBtn = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
 `;

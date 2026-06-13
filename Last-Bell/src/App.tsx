@@ -6,6 +6,7 @@ import TimeTableAndMeal from "./pages/TimeTableAndMeal";
 import Setting from "./pages/setting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodaySchoolMeal from "./components/meal/index";
+import AdminTask from "./pages/admin/AdminTask";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           ></Route>
           <Route path="/Setting" element={<Setting />}></Route>
           <Route path="/meal" element={<TodaySchoolMeal />}></Route>
+          <Route path="/admin/:grade/:classNumber" element={<AdminTask />} />
         </Routes>
       </BrowserRouter>
     </>
