@@ -8,30 +8,36 @@ const ExamAnd = () => {
   return (
     <MainLayOut title="시험&수행평가">
       <MainContainer>
-        <TopSection>
+        <LeftSection>
           <ExamNotice />
-          <ExamTimeLine />
-        </TopSection>
+          <TaskAssessment />
+        </LeftSection>
 
-        <TaskAssessment />
+        <RightSection>
+          <ExamTimeLine />
+        </RightSection>
       </MainContainer>
     </MainLayOut>
   );
 };
 
-export default ExamAnd;
-
 const MainContainer = styled.div`
   width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 32px;
+  align-items: start;
+`;
+
+const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
 `;
 
-const TopSection = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 32px;
-  width: 100%;
-  align-items: stretch;
+const RightSection = styled.div`
+  position: sticky;
+  top: 24px;
 `;
+
+export default ExamAnd;

@@ -46,9 +46,12 @@ const getCurrentPeriod = () => {
 function TodaySchoolTimetable() {
   const [timetable, setTimetable] = useState<TimetableItem[]>([]);
   const [currentPeriod, setCurrentPeriod] = useState(getCurrentPeriod);
+  const targetDate = new Date();
+
+  targetDate.setDate(targetDate.getDate() + 2);
 
   useEffect(() => {
-    const today = new Date()
+    const today = targetDate
       .toLocaleDateString("ko-KR", {
         year: "numeric",
         month: "2-digit",

@@ -6,8 +6,8 @@ export type VacationTheme =
   | "done";
 
 const TimeUntilVacation = () => {
-  const startDate = "2026-07-18"; // 방학 시작일 수정
-  const endDate = "2026-08-23"; // 방학 종료일 수정
+  const startDate = "2026-07-16"; // 방학 시작일 
+  const endDate = "2026-08-18"; // 방학 종료일 
 
   const parseLocalDate = (dateStr: string): Date => {
     const [year, month, day] = dateStr.split("-").map(Number);

@@ -20,7 +20,7 @@ export default TaskAssessment;
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
   padding: 20px;
 `;
@@ -35,7 +35,7 @@ const Text = styled.div`
 const WrapperREAL = styled.div`
   padding-top: 5px;
   background-color: white;
-  width: 930px;
+  width: 904px;
   height: 400px;
   box-sizing: border-box;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
