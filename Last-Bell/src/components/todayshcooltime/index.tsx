@@ -6,6 +6,8 @@ import { Colors } from "../../styles/color";
 type TimetableItem = {
   PERIO: string | number;
   ITRT_CNTNT: string;
+  GRADE: string;
+  CLASS_NM: string;
 };
 
 const PERIOD_TIMES = [
@@ -60,7 +62,11 @@ function TodaySchoolTimetable() {
         const res = await TimetableApi(today);
         const rowData = res.data?.hisTimetable?.[1]?.row;
 
-        setTimetable(rowData || []);
+        const filtered = (rowData || []).filter(
+          (item: TimetableItem) => !String(item.ITRT_CNTNT).includes("휴업일"),
+        );
+
+        setTimetable(filtered);
       } catch (error) {
         console.error("시간표 로드 에러:", error);
       }

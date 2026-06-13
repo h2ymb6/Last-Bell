@@ -1,8 +1,15 @@
 import { useState } from "react";
 import * as S from "./styles";
+import { TEACHERS, type Teacher } from "./mokData";
+import TeacherModal from "./Floor";
 
 const SearchSection = () => {
   const [keyword, setKeyword] = useState<string>("");
+  const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
+
+  const filtered = keyword.trim()
+    ? TEACHERS.filter((t) => t.name.includes(keyword.trim()))
+    : TEACHERS;
 
   return (
     <S.SearchSectionCard>
@@ -18,12 +25,41 @@ const SearchSection = () => {
         />
       </S.SearchBarWrap>
 
-      <S.SearchPlaceholder>
-        <i
-          className="fa-solid fa-magnifying-glass"
-          style={{ fontSize: "48px" }}
+      {filtered.length > 0 && (
+        <S.DropdownList>
+          {filtered.map((teacher) => (
+            <S.DropdownItem
+              key={teacher.name}
+              onClick={() => {
+                setSelectedTeacher(teacher);
+                setKeyword("");
+              }}
+            >
+              {teacher.name} · {teacher.subject}
+            </S.DropdownItem>
+          ))}
+        </S.DropdownList>
+      )}
+
+      {keyword.trim() && filtered.length === 0 && (
+        <S.SearchPlaceholder>검색 결과가 없습니다.</S.SearchPlaceholder>
+      )}
+
+      {!keyword.trim() && filtered.length === 0 && (
+        <S.SearchPlaceholder>
+          <i
+            className="fa-solid fa-magnifying-glass"
+            style={{ fontSize: "48px" }}
+          />
+        </S.SearchPlaceholder>
+      )}
+
+      {selectedTeacher && (
+        <TeacherModal
+          teacher={selectedTeacher}
+          onClose={() => setSelectedTeacher(null)}
         />
-      </S.SearchPlaceholder>
+      )}
     </S.SearchSectionCard>
   );
 };

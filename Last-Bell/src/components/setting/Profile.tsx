@@ -2,16 +2,21 @@ import styled from "styled-components";
 import dog from "../../assets/dog.png";
 import { Colors } from "../../styles/color";
 import { useRef, useState } from "react";
+import {
+  getSchoolClassSetting,
+  saveSchoolClassSetting,
+} from "../../utils/schoolClassStorage";
 
 export default function Profile() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const savedSchoolClass = getSchoolClassSetting();
 
   const [isEdit, setIsEdit] = useState(false);
   const [profile, setProfile] = useState({
     name: "이태연",
     email: "example@mail.com",
-    grade: "2",
-    classNumber: "1",
+    grade: savedSchoolClass.grade,
+    classNumber: savedSchoolClass.classNumber,
     image: dog,
   });
 
@@ -39,6 +44,10 @@ export default function Profile() {
 
   const handleSave = () => {
     setProfile(editProfile);
+    saveSchoolClassSetting({
+      grade: editProfile.grade,
+      classNumber: editProfile.classNumber,
+    });
     setIsEdit(false);
     alert("수정되었습니다!");
   };
