@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
 import { MainLayOut } from "../layouts/mainLayout";
-import ScheduleApi from "../apis/calender/index";
-import TodaySchoolTimetable from "../components/todayshcooltime";
-import DismissalProgress from "../components/schoolSchedule/untilFriday";
-import TodaySchoolMeal from "../components/meal/index";
-import ScheduleListSection from "../components/schoolSchedule/SideSchudule";
-import ExamNotice from "../components/dashBoard/ExamNotice";
-import VacationCountdown from "../components/todayshcooltime/VacationCountdown";
+
+import {
+  FridayCountDown,
+  TodaySchoolMeal,
+  VacationCountdown,
+  SideSchudule,
+  TodaySchoolTimetable,
+  ExamNotice,
+} from "../components/dashBoard/index";
+
+import ScheduleApi from "../apis/ScheduleApi";
 
 const DashBoard = () => {
   const [schedules, setSchedules] = useState([]);
@@ -47,7 +51,7 @@ const DashBoard = () => {
         <LeftSection>
           <ExamNotice />
           <TodaySchoolMeal />
-          <ScheduleListSection
+          <SideSchudule
             selectedDate={today}
             selectedSchedules={todaySchedules}
           />
@@ -57,7 +61,7 @@ const DashBoard = () => {
           <VacationCountdown />
           <TodaySchoolTimetable />
           <SideWidgets>
-            <DismissalProgress selectedTime="cb_1420" />
+            <FridayCountDown selectedTime="cb_1420" />
           </SideWidgets>
         </RightSection>
       </MainContainer>

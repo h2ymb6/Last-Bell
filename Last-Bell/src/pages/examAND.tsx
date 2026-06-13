@@ -1,7 +1,9 @@
 import { MainLayOut } from "../layouts/mainLayout";
-import ExamNotice from "../components/dashBoard/ExamNotice";
-import ExamTimeLine from "../components/exam/examTimeLine/index";
-import TaskAssessment from "../components/exam/TaskAssessment/taskAssessment";
+import {
+  ExamNotice,
+  TaskAssessment,
+  ExamTimeLine,
+} from "../components/ExamAnd";
 import styled from "styled-components";
 
 const ExamAnd = () => {

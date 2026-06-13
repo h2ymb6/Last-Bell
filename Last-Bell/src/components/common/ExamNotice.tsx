@@ -2,7 +2,7 @@ import { Colors } from "../../styles/color";
 import TimeUntilExam from "../../utils/timeUntilExamCal";
 import styled from "styled-components";
 import { getMotivationImage } from "../../utils/motivationImageStorage";
-import defaultImg from "../../assets/cat.png";
+import defaultImg from "../../assets/DefaultMainImg.png";
 
 const ExamNotice = () => {
   const examInfo = TimeUntilExam();

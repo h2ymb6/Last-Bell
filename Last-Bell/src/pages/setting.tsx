@@ -1,8 +1,10 @@
 import { MainLayOut } from "../layouts/mainLayout";
 import styled from "styled-components";
-import Profile from "../components/setting/Profile";
-import SendFeedback from "../components/setting/SendFeedback";
-import MotivationImageUpload from "../components/setting/MotivationImageUpload";
+import {
+  Profile,
+  SendFeedback,
+  MotivationImageUpload,
+} from "../components/setting/index";
 
 const Setting = () => {
   return (

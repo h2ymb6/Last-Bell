@@ -1,7 +1,7 @@
 import { MainLayOut } from "../layouts/mainLayout";
 import TodaySchoolMeal from "../components/meal";
 import styled from "styled-components";
-import TodaySchoolTimetable from "../components/todayshcooltime";
+import TodaySchoolTimetable from "../components/common/todayshcooltime";
 
 const TimeTableAndMeal = () => {
   return (

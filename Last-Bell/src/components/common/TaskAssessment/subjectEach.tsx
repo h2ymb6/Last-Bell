@@ -1,6 +1,6 @@
 import Each from "./Each";
 import styled from "styled-components";
-import type { TaskAssessment } from "../../../utils/taskAssessmentStorage";
+import type { TaskAssessment } from "../../../utils/AssessmentStorage";
 
 interface SubjectEachProps {
   title: string;
@@ -9,7 +9,12 @@ interface SubjectEachProps {
   items: TaskAssessment[];
 }
 
-export const SubjectEach = ({ title, color, subtitle = "", items }: SubjectEachProps) => {
+export const SubjectEach = ({
+  title,
+  color,
+  subtitle = "",
+  items,
+}: SubjectEachProps) => {
   return (
     <Wrapper>
       <Title $color={color}>

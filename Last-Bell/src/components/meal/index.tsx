@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import MealApi from "../../apis/meal/index";
+import MealApi from "../../apis/MealApil";
 import { Colors } from "../../styles/color";
 
 function TodaySchoolMeal() {

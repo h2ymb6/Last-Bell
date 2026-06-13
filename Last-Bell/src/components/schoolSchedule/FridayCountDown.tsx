@@ -4,13 +4,13 @@ import { Colors } from "../../styles/color";
 
 type SelectedTime = "cb_2030" | "cb_1420";
 
-interface DismissalProgressProps {
+interface FridayCountDownProps {
   selectedTime?: SelectedTime;
 }
 
-const DismissalProgress = ({
+export default function FridayCountDown({
   selectedTime = "cb_1420",
-}: DismissalProgressProps) => {
+}: FridayCountDownProps) {
   const [timerText, setTimerText] = useState("시간 선택해");
   const [percent, setPercent] = useState(0);
 
@@ -129,9 +129,7 @@ const DismissalProgress = ({
       </BottomRow>
     </Wrapper>
   );
-};
-
-export default DismissalProgress;
+}
 
 const Wrapper = styled.div`
   margin-top: 20px;

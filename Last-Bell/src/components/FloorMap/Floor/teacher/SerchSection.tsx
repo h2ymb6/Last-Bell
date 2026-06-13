@@ -3,7 +3,7 @@ import * as S from "../styles";
 import { TEACHERS, type Teacher } from "./mokData";
 import TeacherModal from "./Floor";
 
-const SearchSection = () => {
+const TeacherSearchSection = () => {
   const [keyword, setKeyword] = useState<string>("");
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
 
@@ -64,4 +64,4 @@ const SearchSection = () => {
   );
 };
 
-export default SearchSection;
+export default TeacherSearchSection;

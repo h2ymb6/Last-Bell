@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { MainLayOut } from "../layouts/mainLayout";
-import SearchSection from "../components/Floor/teacher/SerchSection";
-import ClubSearchSection from "../components/Floor/student/ClubSerchSection";
+import {
+  ClubSearchSection,
+  TeacherSearchSection,
+} from "../components/FloorMap";
 
 export const FloorMap = () => {
   return (
     <MainLayOut title="층별 지도">
       <MainContainer>
-        <SearchSection />
+        <TeacherSearchSection />
         <ClubSearchSection />
       </MainContainer>
     </MainLayOut>

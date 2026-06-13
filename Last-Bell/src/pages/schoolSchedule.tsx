@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
 import { MainLayOut } from "../layouts/mainLayout";
-import ScheduleApi from "../apis/calender/index";
-
+import ScheduleApi from "../apis/ScheduleApi";
 import CalendarSection from "../components/schoolSchedule/Calendar";
-import ScheduleListSection from "../components/schoolSchedule/SideSchudule";
+import SideSchudule from "../components/schoolSchedule/SideSchudule";
 
 const SchoolSchedule = () => {
   const [schedules, setSchedules] = useState([]);
@@ -63,7 +62,7 @@ const SchoolSchedule = () => {
           handleActiveStartDateChange={handleActiveStartDateChange}
           hasSchedule={hasSchedule}
         />
-        <ScheduleListSection
+        <SideSchudule
           selectedDate={selectedDate}
           selectedSchedules={selectedSchedules}
         />

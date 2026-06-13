@@ -1,6 +1,5 @@
 import axios from "axios";
-import { getSchoolClassSetting } from "../../utils/schoolClassStorage";
-
+import { getSchoolClassSetting } from "../utils/schoolClassStorage";
 const key = import.meta.env.VITE_NEIS_KEY;
 
 const API = axios.create({

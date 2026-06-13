@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import TimetableApi from "../../apis/TimeTable/index";
-import { Colors } from "../../styles/color";
+import TimetableApi from "../../../apis/TimetableApi";
+import { Colors } from "../../../styles/color";
 
 type TimetableItem = {
   PERIO: string | number;

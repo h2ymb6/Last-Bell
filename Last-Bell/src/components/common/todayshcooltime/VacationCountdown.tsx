@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Colors } from "../../styles/color";
-import TimeUntilVacation from "../../utils/timeUntilVacation";
+import { Colors } from "../../../styles/color";
+import TimeUntilVacation from "../../../utils/timeUntilVacation";
 
 const VacationCountdown = () => {
   const { label, theme } = TimeUntilVacation();

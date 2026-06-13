@@ -12,7 +12,7 @@ interface ScheduleListSectionProps {
   selectedSchedules: ScheduleItem[];
 }
 
-function ScheduleListSection({
+export default function SideSchudule({
   selectedDate,
   selectedSchedules,
 }: ScheduleListSectionProps) {
@@ -35,8 +35,6 @@ function ScheduleListSection({
     </SideScheduleWrapper>
   );
 }
-
-export default ScheduleListSection;
 
 const SideScheduleWrapper = styled.div`
   margin-top: 20px;

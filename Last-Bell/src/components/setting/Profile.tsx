@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import dog from "../../assets/dog.png";
+import DefaultMainImg from "../../assets/DefaultMainImg.png";
 import { Colors } from "../../styles/color";
 import { useRef, useState } from "react";
 import {
@@ -17,7 +17,7 @@ export default function Profile() {
     email: "example@mail.com",
     grade: savedSchoolClass.grade,
     classNumber: savedSchoolClass.classNumber,
-    image: dog,
+    image: DefaultMainImg,
   });
 
   const [editProfile, setEditProfile] = useState(profile);
@@ -78,10 +78,6 @@ export default function Profile() {
       </Header>
 
       <ProfileBody>
-        <ImageButton type="button" onClick={handleImageClick} $isEdit={isEdit}>
-          <ProfileImg src={editProfile.image} alt="프로필 이미지" />
-        </ImageButton>
-
         <HiddenFileInput
           ref={fileInputRef}
           type="file"
@@ -156,7 +152,7 @@ const Wrapper = styled.div<{ $isEdit: boolean }>`
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   align-self: flex-start;
-  height: ${({ $isEdit }) => ($isEdit ? "320px" : "270px")};
+  height: ${({ $isEdit }) => ($isEdit ? "305px" : "235px")};
   box-sizing: border-box;
   transition: width 0.25s ease;
 `;
@@ -181,15 +177,6 @@ const ProfileBody = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 20px;
-`;
-
-const ProfileImg = styled.img`
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  object-fit: cover;
-  background-color: ${Colors.Blue100};
-  border: 3px solid ${Colors.Blue200};
 `;
 
 const UserInfo = styled.div`
@@ -301,13 +288,6 @@ const SaveButton = styled.button`
   &:hover {
     background-color: ${Colors.Blue800};
   }
-`;
-
-const ImageButton = styled.button<{ $isEdit: boolean }>`
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: ${({ $isEdit }) => ($isEdit ? "pointer" : "default")};
 `;
 
 const HiddenFileInput = styled.input`

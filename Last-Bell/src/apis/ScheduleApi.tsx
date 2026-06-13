@@ -18,8 +18,8 @@ const ScheduleApi = async (fromData, toData) => {
         pSize: 100,
         ATPT_OFCDC_SC_CODE: "G10",
         SD_SCHUL_CODE: 7430310,
-        AA_FROM_YMD: fromData, // 조회 시작일
-        AA_TO_YMD: toData, // 조회 종료일
+        AA_FROM_YMD: fromData,
+        AA_TO_YMD: toData,
       },
     });
     return response;
