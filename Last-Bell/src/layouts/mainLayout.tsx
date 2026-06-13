@@ -39,7 +39,7 @@ const Right = styled.main`
 const Content = styled.div`
   width: 100%;
   box-sizing: border-box;
-  padding: 24px 48px 48px 0;
+  padding: 24px clamp(16px, 3vw, 48px) 48px 0;
   display: flex;
   flex-direction: column;
   gap: 32px;

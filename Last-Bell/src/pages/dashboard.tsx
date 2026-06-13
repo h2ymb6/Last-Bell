@@ -46,27 +46,19 @@ const DashBoard = () => {
       <MainContainer>
         <LeftSection>
           <ExamNotice />
-          <div style={{ marginTop: "22px" }}>
-            <TodaySchoolMeal />
-          </div>
+          <TodaySchoolMeal />
+          <ScheduleListSection
+            selectedDate={today}
+            selectedSchedules={todaySchedules}
+          />
         </LeftSection>
+
         <RightSection>
+          <VacationCountdown />
           <TodaySchoolTimetable />
-          <div
-            style={{
-              display: "flex",
-              gap: "30px",
-              marginLeft: "-120px",
-              width: "550px",
-            }}
-          >
-            <ScheduleListSection
-              selectedDate={today}
-              selectedSchedules={todaySchedules}
-            />
+          <SideWidgets>
             <DismissalProgress selectedTime="cb_1420" />
-            <VacationCountdown />
-          </div>
+          </SideWidgets>
         </RightSection>
       </MainContainer>
     </MainLayOut>
@@ -77,20 +69,32 @@ export default DashBoard;
 
 const MainContainer = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 32px;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
   width: 100%;
   box-sizing: border-box;
-  padding-right: 50px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
+  min-width: 0;
 `;
 
 const RightSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 20px;
-  margin-left: 50px;
+`;
+
+const SideWidgets = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;

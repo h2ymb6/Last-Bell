@@ -20,11 +20,12 @@ export default VacationCountdown;
 
 const Wrapper = styled.div`
   background-color: white;
+  width: 100%;
   padding: 20px;
-  width: 400px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-  height: 124px;
+  box-sizing: border-box;
+  height: 140px;
 `;
 
 const Title = styled.h1`

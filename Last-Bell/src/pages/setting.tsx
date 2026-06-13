@@ -2,12 +2,14 @@ import { MainLayOut } from "../layouts/mainLayout";
 import styled from "styled-components";
 import Profile from "../components/setting/Profile";
 import SendFeedback from "../components/setting/SendFeedback";
+import MotivationImageUpload from "../components/setting/MotivationImageUpload";
 
 const Setting = () => {
   return (
     <MainLayOut title="설정">
       <MainContainer>
         <Profile />
+        <MotivationImageUpload />
         <SendFeedback />
       </MainContainer>
     </MainLayOut>

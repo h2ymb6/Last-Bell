@@ -141,7 +141,7 @@ const Wrapper = styled.div`
   border-radius: 20px;
   align-self: flex-start;
   height: 230px;
-  width: 300px;
+  width: 100%;
   box-sizing: border-box;
 `;
 

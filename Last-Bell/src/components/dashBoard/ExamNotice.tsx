@@ -1,7 +1,8 @@
 import { Colors } from "../../styles/color";
 import TimeUntilExam from "../../utils/timeUntilExamCal";
 import styled from "styled-components";
-import img from "../../assets/cat.png";
+import { getMotivationImage } from "../../utils/motivationImageStorage";
+import defaultImg from "../../assets/cat.png";
 
 const ExamNotice = () => {
   const examInfo = TimeUntilExam();
@@ -23,6 +24,9 @@ const ExamNotice = () => {
       ? "rgba(245, 158, 11, 0.22)"
       : "rgba(0, 0, 0, 0.08)";
 
+  const savedImage = getMotivationImage();
+  const imgSrc = savedImage ?? defaultImg;
+
   return (
     <Wrapper
       $isUrgent={isUrgent}
@@ -39,7 +43,7 @@ const ExamNotice = () => {
 
       <Main $isUrgent={isUrgent} $themeColor={themeColor}>
         끝까지 포기하지마! <br /> 오늘도 힘내자!
-        <Img src={img} alt="" />
+        <Img src={imgSrc} alt="" />
       </Main>
     </Wrapper>
   );
@@ -48,9 +52,12 @@ const ExamNotice = () => {
 export default ExamNotice;
 
 const Img = styled.img`
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
   right: 50px;
-  margin-top: -50px;
+  margin-top: -20px;
   position: absolute;
 `;
 
@@ -62,7 +69,7 @@ const Wrapper = styled.div<{
 }>`
   background: ${({ $themeBg }) => $themeBg};
   box-shadow: 0 10px 30px ${({ $shadowColor }) => $shadowColor};
-  width: 900px;
+  width: 100%;
   height: 280px;
   border-radius: 20px;
   margin-top: 20px;
