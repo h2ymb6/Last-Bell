@@ -51,10 +51,6 @@ const DashBoard = () => {
         <LeftSection>
           <ExamNotice />
           <TodaySchoolMeal />
-          <SideSchudule
-            selectedDate={today}
-            selectedSchedules={todaySchedules}
-          />
         </LeftSection>
 
         <RightSection>
@@ -63,6 +59,10 @@ const DashBoard = () => {
           <SideWidgets>
             <FridayCountDown selectedTime="cb_1420" />
           </SideWidgets>
+          <SideSchudule
+            selectedDate={today}
+            selectedSchedules={todaySchedules}
+          />
         </RightSection>
       </MainContainer>
     </MainLayOut>
