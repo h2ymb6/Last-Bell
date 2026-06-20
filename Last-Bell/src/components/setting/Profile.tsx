@@ -13,7 +13,7 @@ export default function Profile() {
 
   const [isEdit, setIsEdit] = useState(false);
   const [profile, setProfile] = useState({
-    name: "이태연",
+    name: "000",
     email: "example@mail.com",
     grade: savedSchoolClass.grade,
     classNumber: savedSchoolClass.classNumber,
@@ -50,11 +50,6 @@ export default function Profile() {
     });
     setIsEdit(false);
     alert("수정되었습니다!");
-  };
-
-  const handleImageClick = () => {
-    if (!isEdit) return;
-    fileInputRef.current?.click();
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
