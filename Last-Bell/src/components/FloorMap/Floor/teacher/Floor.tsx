@@ -12,7 +12,7 @@ const TeacherModal = ({ teacher, onClose }: Props) => {
       <S.ModalCard onClick={(e) => e.stopPropagation()}>
         <S.ModalCloseBtn onClick={onClose}>✕</S.ModalCloseBtn>
         <S.CardTitle>{teacher.name} 선생님</S.CardTitle>
-        <S.CardDescription>담당 과목: {teacher.subject}</S.CardDescription>
+        <S.CardDescription>{teacher.description}</S.CardDescription>
         <S.CardDescription>
           {teacher.floor}층 {teacher.office}
         </S.CardDescription>{" "}

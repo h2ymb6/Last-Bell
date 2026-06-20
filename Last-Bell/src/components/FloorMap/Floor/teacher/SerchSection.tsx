@@ -35,7 +35,7 @@ const TeacherSearchSection = () => {
                 setKeyword("");
               }}
             >
-              {teacher.name} · {teacher.subject}
+              {teacher.name} · {teacher.description}
             </S.DropdownItem>
           ))}
         </S.DropdownList>

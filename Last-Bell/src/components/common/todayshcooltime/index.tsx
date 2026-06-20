@@ -48,7 +48,7 @@ function TodaySchoolTimetable() {
   const [currentPeriod, setCurrentPeriod] = useState(getCurrentPeriod);
   const targetDate = new Date();
 
-  targetDate.setDate(targetDate.getDate() + 2);
+  targetDate.setDate(targetDate.getDate());
 
   useEffect(() => {
     const today = targetDate
