@@ -5,11 +5,12 @@ import { MainLayOut } from "../layouts/mainLayout";
 import ScheduleApi from "../apis/ScheduleApi";
 import CalendarSection from "../components/schoolSchedule/Calendar";
 import SideSchudule from "../components/schoolSchedule/SideSchudule";
+import { getKSTDate } from "../utils/today";
 
 const SchoolSchedule = () => {
   const [schedules, setSchedules] = useState([]);
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(getKSTDate());
+  const [selectedDate, setSelectedDate] = useState(getKSTDate());
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();

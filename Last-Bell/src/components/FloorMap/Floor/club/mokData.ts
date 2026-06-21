@@ -39,45 +39,43 @@ export const CLUBS: Club[] = [
   {
     name: "Modeep",
     floor: 3,
-    room: "3-2세미나실",
+    room: "3-2 세미나실",
     description: "AI 동아리",
   },
   {
     name: "Xquare",
-    floor: 0,
-    room: "?",
+    floor: 2,
+    room: "2-3 세미나실",
     description: "데브옵스 동아리",
   },
   {
-    name: "대동여지도",
-    floor: 0,
-    room: "?",
-    description: "웹/앱 동아리",
-  },
-
-  {
-    name: "Info",
-    floor: 0,
-    room: "0",
-    description: "정보보안 동아리",
-  },
-
-  {
     name: "실락원",
-    floor: 0,
-    room: "0",
+    floor: 2,
+    room: "2-4 세미나실",
     description: "게임 동아리",
-  },
-  {
-    name: ".(dot)",
-    floor: 0,
-    room: "0",
-    description: "디자인 동아리",
   },
   {
     name: "Team.QSS",
     floor: 3,
     room: "3-3세미나실",
     description: "게임 동아리",
+  },
+  {
+    name: "대동여지도",
+    floor: 2,
+    room: "2-2 세미나실",
+    description: "웹 동아리",
+  },
+  {
+    name: "Info",
+    floor: 3,
+    room: "3-1 세미나실",
+    description: "정보보안 동아리",
+  },
+  {
+    name: ".(dot)",
+    floor: 0,
+    room: "?",
+    description: "디자인 동아리",
   },
 ];

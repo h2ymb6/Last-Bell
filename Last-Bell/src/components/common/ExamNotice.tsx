@@ -1,10 +1,21 @@
 import { Colors } from "../../styles/color";
 import TimeUntilExam from "../../utils/timeUntilExamCal";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 import { getMotivationImage } from "../../utils/motivationImageStorage";
 import defaultImg from "../../assets/DefaultMainImg.png";
 
 const ExamNotice = () => {
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTick((prev) => prev + 1);
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const examInfo = TimeUntilExam();
   const isWarning = examInfo.theme === "warning";
   const isDanger = examInfo.theme === "danger";

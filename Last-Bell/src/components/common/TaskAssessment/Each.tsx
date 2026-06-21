@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-const Each = ({ title, text, date }) => {
+interface EachProps {
+  title: string;
+  date: string;
+  text: string;
+}
+
+const Each = ({ title, text, date }: EachProps) => {
   return (
     <Wrapper>
       <Top>

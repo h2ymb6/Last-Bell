@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import MealApi from "../../apis/MealApil";
+import { getTodayKSTYYYYMMDD } from "../../utils/today";
 import { Colors } from "../../styles/color";
 
 function TodaySchoolMeal() {
@@ -11,7 +12,7 @@ function TodaySchoolMeal() {
   });
 
   useEffect(() => {
-    const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const today = getTodayKSTYYYYMMDD();
 
     const load = async () => {
       const res = await MealApi(today);

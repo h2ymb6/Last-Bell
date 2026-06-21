@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import TimetableApi from "../../../apis/TimetableApi";
+import { getKSTYYYYMMDD } from "../../../utils/today";
 import { Colors } from "../../../styles/color";
 
 type TimetableItem = {
@@ -46,19 +47,9 @@ const getCurrentPeriod = () => {
 function TodaySchoolTimetable() {
   const [timetable, setTimetable] = useState<TimetableItem[]>([]);
   const [currentPeriod, setCurrentPeriod] = useState(getCurrentPeriod);
-  const targetDate = new Date();
-
-  targetDate.setDate(targetDate.getDate());
 
   useEffect(() => {
-    const today = targetDate
-      .toLocaleDateString("ko-KR", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      })
-      .replace(/\. /g, "")
-      .replace(/\./, "");
+    const today = getKSTYYYYMMDD();
 
     const load = async () => {
       try {

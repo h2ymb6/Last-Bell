@@ -1,3 +1,5 @@
+import { getTodayKST } from "./today";
+
 export type ExamTheme = "normal" | "warning" | "danger" | "exam" | "done";
 
 const TimeUntilExam = () => {
@@ -9,19 +11,7 @@ const TimeUntilExam = () => {
     return new Date(year, month - 1, day);
   };
 
-  const toKSTMidnight = (): Date => {
-    const now = new Date();
-    const kstOffset = 9 * 60 * 60 * 1000;
-    const kstNow = new Date(now.getTime() + kstOffset);
-
-    const year = kstNow.getUTCFullYear();
-    const month = kstNow.getUTCMonth();
-    const day = kstNow.getUTCDate();
-
-    return new Date(year, month, day);
-  };
-
-  const today = toKSTMidnight();
+  const today = getTodayKST();
   const start = parseLocalDate(startDate);
   const end = parseLocalDate(endDate);
 
