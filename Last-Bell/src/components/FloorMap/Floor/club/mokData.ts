@@ -74,8 +74,8 @@ export const CLUBS: Club[] = [
   },
   {
     name: ".(dot)",
-    floor: 0,
-    room: "?",
+    floor: 4,
+    room: "4-1 세미나실",
     description: "디자인 동아리",
   },
 ];

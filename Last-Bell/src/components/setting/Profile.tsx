@@ -7,13 +7,17 @@ import {
   saveSchoolClassSetting,
 } from "../../utils/schoolClassStorage";
 
+const PROFILE_NAME_STORAGE_KEY = "profileName";
+
 export default function Profile() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const savedSchoolClass = getSchoolClassSetting();
+  const savedProfileName =
+    localStorage.getItem(PROFILE_NAME_STORAGE_KEY) || "000";
 
   const [isEdit, setIsEdit] = useState(false);
   const [profile, setProfile] = useState({
-    name: "000",
+    name: savedProfileName,
     email: "example@mail.com",
     grade: savedSchoolClass.grade,
     classNumber: savedSchoolClass.classNumber,
@@ -43,10 +47,16 @@ export default function Profile() {
   };
 
   const handleSave = () => {
-    setProfile(editProfile);
+    const nextProfile = {
+      ...editProfile,
+      name: editProfile.name.trim() || "000",
+    };
+
+    setProfile(nextProfile);
+    localStorage.setItem(PROFILE_NAME_STORAGE_KEY, nextProfile.name);
     saveSchoolClassSetting({
-      grade: editProfile.grade,
-      classNumber: editProfile.classNumber,
+      grade: nextProfile.grade,
+      classNumber: nextProfile.classNumber,
     });
     setIsEdit(false);
     alert("수정되었습니다!");
