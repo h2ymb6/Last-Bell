@@ -3,7 +3,7 @@ import * as S from "./AdminTask.styles";
 interface TaskFormProps {
   editId: string | null;
   form: { subject: string; title: string; dueDate: string };
-  onChange: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: () => void;
   onCancel: () => void;
 }

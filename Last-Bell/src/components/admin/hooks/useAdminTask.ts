@@ -8,15 +8,16 @@ import {
   type TaskAssessment,
 } from "@utils/AssessmentStorage";
 
-const EMPTY_FORM = { subject: "", title: "", dueDate: "" };
+const FORM = { subject: "", title: "", dueDate: "" };
 
 export const useAdminTask = () => {
   const { grade, classNumber } = useParams<{
     grade: string;
     classNumber: string;
   }>();
+
   const [tasks, setTasks] = useState<TaskAssessment[]>(getTaskAssessments());
-  const [form, setForm] = useState(EMPTY_FORM);
+  const [form, setForm] = useState(FORM);
   const [editId, setEditId] = useState<string | null>(null);
 
   const myTasks = tasks.filter(
@@ -54,12 +55,12 @@ export const useAdminTask = () => {
         grade: grade!,
         classNumber: classNumber!,
       });
-      setEditId(null);
+      setEditId('');
     } else {
       addTaskAssessment({ ...form, grade: grade!, classNumber: classNumber! });
     }
 
-    setForm(EMPTY_FORM);
+    setForm(FORM);
     refresh();
   };
 
@@ -80,8 +81,8 @@ export const useAdminTask = () => {
   };
 
   const handleCancel = () => {
-    setEditId(null);
-    setForm(EMPTY_FORM);
+    setEditId('');
+    setForm(FORM);
   };
 
   return {
