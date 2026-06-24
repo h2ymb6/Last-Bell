@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 type SelectedTime = "cb_2030" | "cb_1420";
 
 export default function useFridayCountDown(selectedTime: SelectedTime) {
-  const [timerText, setTimerText] = useState("시간 선택해");
+  const [timerText, setTimerText] = useState("");
   const [percent, setPercent] = useState(0);
 
   const getTargetTime = (hour: number, minute: number) => {

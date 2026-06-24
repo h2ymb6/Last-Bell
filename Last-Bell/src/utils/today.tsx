@@ -1,33 +1,30 @@
 export const KST_OFFSET = 9 * 60 * 60 * 1000;
 
-export const getKSTDate = (offsetDays = 1): Date => {
+export const getKSTDate = (offsetDays = 0): Date => {
   const now = new Date();
-  const kstNow = new Date(now.getTime() + KST_OFFSET);
-  const today = new Date(
-    kstNow.getUTCFullYear(),
-    kstNow.getUTCMonth(),
-    kstNow.getUTCDate(),
-  );
 
-  today.setDate(today.getDate() + offsetDays);
+  const kstTime = now.getTime() + KST_OFFSET;
 
-  return today;
+  const kstDate = new Date(kstTime);
+  kstDate.setUTCHours(0, 0, 0, 0);
+  kstDate.setUTCDate(kstDate.getUTCDate() + offsetDays);
+
+  return kstDate;
 };
 
-export const getTodayKST = (): Date => getKSTDate();
+export const getTodayKST = (): Date => getKSTDate(0);
 
 export const formatAsYYYYMMDD = (date: Date): string => {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
 
   return `${year}${month}${day}`;
 };
 
-export const getKSTYYYYMMDD = (offsetDays = 1): string =>
+export const getKSTYYYYMMDD = (offsetDays = 0): string =>
   formatAsYYYYMMDD(getKSTDate(offsetDays));
 
-export const getTodayKSTYYYYMMDD = (): string => getKSTYYYYMMDD();
-
+export const getTodayKSTYYYYMMDD = (): string => getKSTYYYYMMDD(0);
 export const getOffsetKST = getKSTDate;
 export const getOffsetKSTYYYYMMDD = getKSTYYYYMMDD;

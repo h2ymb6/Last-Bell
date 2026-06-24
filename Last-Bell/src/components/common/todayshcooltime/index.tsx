@@ -19,6 +19,7 @@ export default function TodaySchoolTimetable() {
   useEffect(() => {
     const load = async () => {
       const today = getKSTYYYYMMDD();
+      console.log(today);
 
       try {
         const res = await TimetableApi(today);
@@ -39,7 +40,8 @@ export default function TodaySchoolTimetable() {
     load();
   }, []);
 
-useEffect(() => { //현재 교시 계산
+  useEffect(() => {
+    //현재 교시 계산
     const timer = setInterval(() => {
       setCurrentPeriod(getCurrentPeriod());
     }, 60000);
