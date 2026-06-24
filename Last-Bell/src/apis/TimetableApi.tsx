@@ -9,7 +9,7 @@ const API = axios.create({
   },
 });
 
-const TimetableApi = async (date) => {
+const TimetableApi = async (date: string) => {
   try {
     const { grade, classNumber } = getSchoolClassSetting();
 

@@ -8,7 +8,7 @@ const API = axios.create({
   },
 });
 
-const ScheduleApi = async (fromData, toData) => {
+const ScheduleApi = async (fromData: string, toData: string) => {
   try {
     const response = await API.get("/SchoolSchedule", {
       params: {

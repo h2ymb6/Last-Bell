@@ -1,10 +1,9 @@
-import React from "react";
 import * as S from "./AdminTask.styles";
 
 interface TaskFormProps {
   editId: string | null;
   form: { subject: string; title: string; dueDate: string };
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: () => void;
   onSubmit: () => void;
   onCancel: () => void;
 }

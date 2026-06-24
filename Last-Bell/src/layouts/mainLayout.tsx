@@ -13,7 +13,6 @@ export const MainLayOut = ({ children, title }: MainLayOutProps) => {
   return (
     <Wrapper>
       <LeftSideBar />
-
       <Right>
         <Header title={title} />
         <Content>{children}</Content>

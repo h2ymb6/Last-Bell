@@ -8,7 +8,7 @@ const API = axios.create({
   },
 });
 
-const MealApi = async (date) => {
+const MealApi = async (date: string) => {
   try {
     const response = await API.get("/mealServiceDietInfo", {
       params: {
