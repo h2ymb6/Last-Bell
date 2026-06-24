@@ -23,18 +23,15 @@ function CalendarSection({
         <Calendar
           onChange={(value) => {
             if (value instanceof Date) {
+              //value가 Date 객체인지 확인
               setSelectedDate(value);
             }
           }}
           value={selectedDate}
           onActiveStartDateChange={handleActiveStartDateChange}
-          formatDay={(_, date) => format(date, "d")}
           calendarType="gregory"
-          next2Label={null}
-          prev2Label={null}
-          formatMonthYear={(_, date) => format(date, "yyyy년 M월")}
-          tileContent={({ date, view }) => {
-            if (view === "month" && hasSchedule(date)) {
+          tileContent={({ date }) => {
+            if (hasSchedule(date)) {
               return <ScheduleDot />;
             }
             return null;
