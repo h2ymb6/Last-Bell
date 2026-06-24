@@ -37,7 +37,7 @@ export default function useSchoolSchedule() {
     load();
   }, [year, month]);
 
-  const handleActiveStartDateChange = ({
+  const handleActiveStartDateChange = ({ //달력에서 현재 위치가 바뀌었을 때 호출
     activeStartDate,
   }: {
     activeStartDate: Date | null;
@@ -53,7 +53,7 @@ export default function useSchoolSchedule() {
     (item: any) => item.AA_YMD === selectedDateStr,
   );
 
-  const hasSchedule = (date: Date) => {
+  const hasSchedule = (date: Date) => { //특정 날짜에 학사일정이 있는지 확인
     const dateStr = format(date, "yyyyMMdd");
 
     return schedules.some((item: any) => item.AA_YMD === dateStr);
