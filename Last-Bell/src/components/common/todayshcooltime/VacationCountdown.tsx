@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { Colors } from "../../../styles/color";
-import TimeUntilVacation from "../../../utils/timeUntilVacation";
+import { Colors } from "@/styles/color";
+import TimeUntilVacation from "@/utils/timeUntilVacation";
 
 const VacationCountdown = () => {
   const [, setTick] = useState(0);

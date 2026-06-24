@@ -1,9 +1,9 @@
-import { Colors } from "../../styles/color";
-import TimeUntilExam from "../../utils/timeUntilExamCal";
+import { Colors } from "@/styles/color";
+import TimeUntilExam from "@/utils/timeUntilExamCal";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { getMotivationImage } from "../../utils/motivationImageStorage";
-import defaultImg from "../../assets/DefaultMainImg.png";
+import { getMotivationImage } from "@/utils/motivationImageStorage";
+import defaultImg from "@/assets/DefaultMainImg.png";
 
 const ExamNotice = () => {
   const [, setTick] = useState(0);
