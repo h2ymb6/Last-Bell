@@ -1,11 +1,11 @@
 import { getSchoolClassSetting } from "../utils/schoolClassStorage";
-const key = import.meta.env.VITE_NEIS_KEY;
 import { API } from "./index";
+const key = import.meta.env.VITE_NEIS_KEY;
 
 const TimetableApi = async (date: string) => {
-  try {
-    const { grade, classNumber } = getSchoolClassSetting();
+  const { grade, classNumber } = getSchoolClassSetting();
 
+  try {
     const response = await API.get("/hisTimetable", {
       params: {
         KEY: key,
