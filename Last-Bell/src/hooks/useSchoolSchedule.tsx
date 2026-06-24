@@ -4,9 +4,9 @@ import ScheduleApi from "@/apis/ScheduleApi";
 import { getKSTDate } from "@/utils/today";
 
 export default function useSchoolSchedule() {
-  const [schedules, setSchedules] = useState<any[]>([]);
-  const [currentDate, setCurrentDate] = useState(getKSTDate());
-  const [selectedDate, setSelectedDate] = useState(getKSTDate());
+  const [schedules, setSchedules] = useState<any[]>([]); //학사일정 전체 데이터 중 스케쥴
+  const [currentDate, setCurrentDate] = useState(getKSTDate()); //달력의 현재 위치. 예) 6월 1일, 7월 1일 등
+  const [selectedDate, setSelectedDate] = useState(getKSTDate()); //사용자가 선택한 날짜. 예) 6월 5일, 6월 10일 등
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -26,7 +26,7 @@ export default function useSchoolSchedule() {
 
         const rowData = res.data.SchoolSchedule?.[1]?.row || [];
 
-        const validSchedules = rowData.filter((item: any) => item.EVENT_NM);
+        const validSchedules = rowData.filter((item: any) => item.EVENT_NM); //스케쥴 있는 것만
 
         setSchedules(validSchedules);
       } catch (error) {

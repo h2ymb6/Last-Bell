@@ -22,7 +22,7 @@ export const getTaskStatus = (dueDate: string): TaskStatusResult => {
   );
 
   const formattedDate = dueDate.includes("-")
-    ? dueDate.split("-").slice(1).join("-")
+    ? dueDate.split("-").slice(1).join("-") //연도 제거
     : dueDate;
 
   if (diff <= 3) return { status: "urgent", formattedDate };

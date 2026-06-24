@@ -8,8 +8,10 @@ const ClubSearchSection = () => {
   const [keyword, setKeyword] = useState<string>("");
   const [selectedClub, setSelectedClub] = useState<Club | null>(null);
 
-  const filtered = keyword.trim()
-    ? CLUBS.filter((c) => c.name.includes(keyword.trim()))
+  const normalizedKeyword = keyword.trim().toLowerCase();
+
+  const filtered = normalizedKeyword
+    ? CLUBS.filter((c) => c.name.toLowerCase().includes(normalizedKeyword))
     : CLUBS;
 
   return (

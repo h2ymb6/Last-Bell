@@ -28,8 +28,8 @@ export const useAdminTask = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setForm((prev) => ({ ...prev, [name]: value }));
+    console.log(form);
   };
 
   const handleSubmit = () => {
