@@ -1,7 +1,4 @@
-import {
-  getTaskStatus,
-  type TaskAssessment,
-} from "../../../utils/AssessmentStorage";
+import { getTaskStatus, type TaskAssessment } from "../utils/AssessmentStorage";
 import * as S from "./AdminTask.styles";
 
 const STATUS_LABEL = {

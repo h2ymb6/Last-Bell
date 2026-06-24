@@ -4,7 +4,7 @@ import { getSchoolClassSetting } from "../../../utils/schoolClassStorage";
 import {
   getTaskAssessments,
   getTaskStatus,
-} from "../../../utils/AssessmentStorage";
+} from "../../admin/utils/AssessmentStorage";
 
 const TaskAssessment = () => {
   const { grade, classNumber } = getSchoolClassSetting();

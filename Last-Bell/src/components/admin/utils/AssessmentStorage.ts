@@ -46,7 +46,12 @@ export const saveTaskAssessments = (data: TaskAssessment[]) => {
 
 export const addTaskAssessment = (item: Omit<TaskAssessment, "id">) => {
   const all = getTaskAssessments();
-  const newItem = { ...item, id: crypto.randomUUID() };
+
+  const newItem = {
+    ...item,
+    id: Date.now().toString(),
+  };
+
   saveTaskAssessments([...all, newItem]);
 };
 

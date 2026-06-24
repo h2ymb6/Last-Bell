@@ -1,6 +1,6 @@
 import Each from "./Each";
 import styled from "styled-components";
-import type { TaskAssessment } from "../../../utils/AssessmentStorage";
+import type { TaskAssessment } from "../../admin/utils/AssessmentStorage";
 
 interface SubjectEachProps {
   title: string;

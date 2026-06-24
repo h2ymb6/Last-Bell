@@ -6,7 +6,7 @@ import {
   updateTaskAssessment,
   deleteTaskAssessment,
   type TaskAssessment,
-} from "@utils/AssessmentStorage";
+} from "@/components/admin/utils/AssessmentStorage";
 
 const FORM = { subject: "", title: "", dueDate: "" };
 
@@ -28,6 +28,7 @@ export const useAdminTask = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -55,7 +56,7 @@ export const useAdminTask = () => {
         grade: grade!,
         classNumber: classNumber!,
       });
-      setEditId('');
+      setEditId("");
     } else {
       addTaskAssessment({ ...form, grade: grade!, classNumber: classNumber! });
     }
@@ -81,7 +82,7 @@ export const useAdminTask = () => {
   };
 
   const handleCancel = () => {
-    setEditId('');
+    setEditId(null);
     setForm(FORM);
   };
 
