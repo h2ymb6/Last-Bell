@@ -1,57 +1,19 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-import MealApi from "../../apis/MealApil";
-import { getTodayKSTYYYYMMDD } from "../../utils/today";
-import { Colors } from "../../styles/color";
+import { Colors } from "@/styles/color";
+import useSchoolMeal from "./useSchoolMeal";
 
 function TodaySchoolMeal() {
-  const [meal, setMeal] = useState<any[]>([]);
-  const [favoriteMeals, setFavoriteMeals] = useState<string[]>(() => {
-    const saved = localStorage.getItem("favoriteMeals");
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  useEffect(() => {
-    const today = getTodayKSTYYYYMMDD();
-
-    const load = async () => {
-      const res = await MealApi(today);
-
-      const Meal = res.data.mealServiceDietInfo?.[1]?.row;
-      setMeal(Meal || []);
-    };
-
-    load();
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("favoriteMeals", JSON.stringify(favoriteMeals));
-  }, [favoriteMeals]);
-
-  const cleanMealData = (text: string) => {
-    if (!text) return [];
-    return text.split("<br/>").map((food) => food.split("(")[0].trim());
-  };
-
-  const toggleFavorite = (food: string) => {
-    setFavoriteMeals((prev) =>
-      prev.includes(food)
-        ? prev.filter((item) => item !== food)
-        : [...prev, food],
-    );
-  };
-
-  const breakfast = cleanMealData(meal[0]?.DDISH_NM);
-  const lunch = cleanMealData(meal[1]?.DDISH_NM);
-  const dinner = cleanMealData(meal[2]?.DDISH_NM);
+  const { favoriteMeals, toggleFavorite, breakfast, lunch, dinner } =
+    useSchoolMeal();
 
   const renderMealList = (items: string[]) => {
     return items.map((item, i) => {
-      const isFavorite = favoriteMeals.includes(item);
+      const isFavorite = favoriteMeals.includes(item); //즐겨찾기
 
       return (
         <Each key={i}>
           <FoodName>{item}</FoodName>
+
           <StarButton
             type="button"
             onClick={() => toggleFavorite(item)}
@@ -103,6 +65,11 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+const Title = styled.h1`
+  font-size: 21px;
+  font-weight: 600;
+`;
+
 const Meals = styled.div`
   display: flex;
 `;
@@ -146,11 +113,6 @@ const StarButton = styled.button<{ $active: boolean }>`
   &:hover {
     color: #facc15;
   }
-`;
-
-const Title = styled.h1`
-  font-size: 21px;
-  font-weight: 600;
 `;
 
 const MealCon = styled.div`
