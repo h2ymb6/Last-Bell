@@ -1,18 +1,14 @@
 import Each from "./each";
 import styled from "styled-components";
-import { getExamSchedule } from "./data";
+import { getExamSchedule, type ExamSchedule } from "./data";
 
 const ExamTimeLine = () => {
   const schedules = getExamSchedule();
 
-  const grouped = schedules.reduce<Record<string, typeof schedules>>(
-    (acc, item) => {
-      if (!acc[item.date]) acc[item.date] = [];
-      acc[item.date].push(item);
-      return acc;
-    },
-    {},
-  );
+  const grouped = (Object.groupBy(
+    schedules,
+    (item: ExamSchedule) => item.date,
+  ) ?? {}) as Record<string, ExamSchedule[]>;
 
   return (
     <Wrapper>
