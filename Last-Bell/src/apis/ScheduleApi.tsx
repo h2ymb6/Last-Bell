@@ -1,12 +1,5 @@
-import axios from "axios";
+import { API } from "./index";
 const key = import.meta.env.VITE_NEIS_KEY;
-
-const API = axios.create({
-  baseURL: "https://open.neis.go.kr/hub",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
 
 const ScheduleApi = async (fromData: string, toData: string) => {
   try {

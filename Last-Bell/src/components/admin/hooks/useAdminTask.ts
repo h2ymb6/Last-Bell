@@ -6,7 +6,7 @@ import {
   updateTaskAssessment,
   deleteTaskAssessment,
   type TaskAssessment,
-} from "../../../utils/AssessmentStorage";
+} from "@utils/AssessmentStorage";
 
 const EMPTY_FORM = { subject: "", title: "", dueDate: "" };
 

@@ -1,13 +1,6 @@
-import axios from "axios";
 import { getSchoolClassSetting } from "../utils/schoolClassStorage";
 const key = import.meta.env.VITE_NEIS_KEY;
-
-const API = axios.create({
-  baseURL: "https://open.neis.go.kr/hub",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+import { API } from "./index";
 
 const TimetableApi = async (date: string) => {
   try {
