@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function SendFeedback() {
   const [text, setText] = useState("");
 
-  const handleOnchange = (e) => {
+  const handleOnchange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
@@ -48,8 +48,6 @@ const Wrapper = styled.div`
   width: 300px;
   height: 250px;
   box-sizing: border-box;
-
-  
 `;
 
 const Header = styled.div`

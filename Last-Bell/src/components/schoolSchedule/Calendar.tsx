@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Calendar from "react-calendar";
 import { format } from "date-fns";
-import { Colors } from "../../styles/color";
+import { Colors } from "@/styles/color";
 import "react-calendar/dist/Calendar.css";
 
 interface CalendarSectionProps {

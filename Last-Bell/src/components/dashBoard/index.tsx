@@ -3,7 +3,7 @@ import TodaySchoolMeal from "../meal";
 import VacationCountdown from "../common/todayshcooltime/VacationCountdown";
 import TodaySchoolTimetable from "../common/todayshcooltime";
 import SideSchudule from "../schoolSchedule/SideSchudule";
-import FridayCountDown from "../schoolSchedule/FridayCountDown";
+import FridayCountDown from "../schoolSchedule/FridayCountDown/FridayCountDown";
 
 export {
   ExamNotice,

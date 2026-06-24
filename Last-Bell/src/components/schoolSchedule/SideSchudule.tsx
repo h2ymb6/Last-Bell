@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { format } from "date-fns";
-import { Colors } from "../../styles/color";
+import { Colors } from "@/styles/color";
 
 interface ScheduleItem {
   EVENT_NM: string;

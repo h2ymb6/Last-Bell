@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import DefaultMainImg from "../../assets/DefaultMainImg.png";
-import { Colors } from "../../styles/color";
+import DefaultMainImg from "@/assets/DefaultMainImg.png";
+import { Colors } from "@/styles/color";
 import { useRef, useState } from "react";
 import {
   getSchoolClassSetting,
   saveSchoolClassSetting,
-} from "../../utils/schoolClassStorage";
+} from "@/utils/schoolClassStorage";
 
 const PROFILE_NAME_STORAGE_KEY = "profileName";
 

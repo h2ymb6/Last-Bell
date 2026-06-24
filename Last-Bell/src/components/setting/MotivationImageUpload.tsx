@@ -1,35 +1,39 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
-import { Colors } from "../../styles/color";
+import { Colors } from "@/styles/color";
 import {
   saveMotivationImage,
   getMotivationImage,
   removeMotivationImage,
-} from "../../utils/motivationImageStorage";
+} from "@/utils/motivationImageStorage";
 
-const MotivationImageUpload = () => {
+export default function MotivationImageUpload() {
   const [preview, setPreview] = useState<string | null>(getMotivationImage());
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => fileInputRef.current?.click();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-
     const reader = new FileReader();
+
     reader.onload = () => {
-      const dataUrl = reader.result as string;
-      saveMotivationImage(dataUrl);
-      setPreview(dataUrl);
+      const image = reader.result as string;
+      setPreview(image);
+      saveMotivationImage(image);
     };
+
     reader.readAsDataURL(file);
   };
 
   const handleRemove = () => {
-    removeMotivationImage();
     setPreview(null);
-    if (fileInputRef.current) fileInputRef.current.value = "";
+    removeMotivationImage();
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
@@ -40,7 +44,7 @@ const MotivationImageUpload = () => {
 
       <PreviewBox onClick={handleClick}>
         {preview ? (
-          <PreviewImg src={preview} alt="미리보기" />
+          <PreviewImg src={preview} />
         ) : (
           <Placeholder>클릭해서 이미지 업로드</Placeholder>
         )}
@@ -55,13 +59,12 @@ const MotivationImageUpload = () => {
 
       <ButtonRow>
         <UploadBtn onClick={handleClick}>이미지 변경</UploadBtn>
+
         {preview && <RemoveBtn onClick={handleRemove}>기본 이미지로</RemoveBtn>}
       </ButtonRow>
     </Wrapper>
   );
-};
-
-export default MotivationImageUpload;
+}
 
 const Wrapper = styled.div`
   margin-top: 20px;
