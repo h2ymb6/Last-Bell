@@ -18,6 +18,6 @@ export const Colors = {
   Green200: "#c1f1d1",
   Yellow500: "#fec521",
   Yellow200: "#fee989",
-} as const;
+} as const; // as const를 사용하여 Colors 객체의 속성들을 읽기 전용으로
 
-export type colorsKeyOfType = keyof typeof Colors;
+export type colorsKeyOfType = keyof typeof Colors; // Colors 객체의 키 타입을 가져오기 위해 keyof typeof Colors를 사용

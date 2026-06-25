@@ -21,7 +21,7 @@ export default function MotivationImageUpload() {
     reader.onload = () => {
       const image = reader.result as string;
       setPreview(image);
-      saveMotivationImage(image);
+      saveMotivationImage(image); //이미지 저장
     };
 
     reader.readAsDataURL(file);
